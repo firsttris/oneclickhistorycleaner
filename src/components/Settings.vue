@@ -2,102 +2,102 @@
     <div class="fields container">
         <h3><a href="https://developer.chrome.com/extensions/browsingData"
                target="_blank">chrome.browsingData.remove()</a></h3>
-        <p>remove browsingData</p>
+        <p class="text">What should be deleted?</p>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="appcache" value="appcache"
-                       v-model="appcache"> appcache
+                       v-model="appcache" v-on:click="saveSettings"> appcache
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="cache" value="cache" v-model="cache"> cache
+                <input class="form-check-input" type="checkbox" id="cache" value="cache" v-model="cache" v-on:click="saveSettings"> cache
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="cookies" value="cookies" v-model="cookies">
+                <input class="form-check-input" type="checkbox" id="cookies" value="cookies" v-model="cookies" v-on:click="saveSettings">
                 cookies
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="downloads" value="downloads"
-                       v-model="downloads"> downloads
+                       v-model="downloads" v-on:click="saveSettings"> downloads
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="fileSystems" value="fileSystems"
-                       v-model="fileSystems"> fileSystems
+                       v-model="fileSystems" v-on:click="saveSettings"> fileSystems
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="formData" value="formData"
-                       v-model="formData"> formData
+                       v-model="formData" v-on:click="saveSettings"> formData
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="history" value="history" v-model="history">
+                <input class="form-check-input" type="checkbox" id="history" value="history" v-model="history" v-on:click="saveSettings">
                 history
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="indexedDB" value="indexedDB"
-                       v-model="indexedDB"> indexedDB
+                       v-model="indexedDB" v-on:click="saveSettings"> indexedDB
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="localStorage" value="localStorage"
-                       v-model="localStorage"> localStorage
+                       v-model="localStorage" v-on:click="saveSettings"> localStorage
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="pluginData" value="pluginData"
-                       v-model="pluginData"> pluginData
+                       v-model="pluginData" v-on:click="saveSettings"> pluginData
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="passwords" value="passwords"
-                       v-model="passwords"> passwords
+                       v-model="passwords" v-on:click="saveSettings"> passwords
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="webSQL" value="webSQL" v-model="webSQL">
+                <input class="form-check-input" type="checkbox" id="webSQL" value="webSQL" v-model="webSQL" v-on:click="saveSettings">
                 webSQL
             </label>
         </div>
         <br>
         <h3><a href="https://developer.chrome.com/extensions/tabs#method-reload"
                target="_blank">chrome.tabs.reload()</a></h3>
-        <p>reload tabs after removing browsingData</p>
+        <p class="text">Reload tabs after removing browsingData?</p>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="refresh" value="refresh" v-model="refreshTabs" @click="removeTabs = false">
+                <input class="form-check-input" type="checkbox" id="refresh" value="refresh" v-model="refreshTabs" @click="removeTabs = false" v-on:click="saveSettings">
                 refresh tabs
             </label>
         </div>
         <br>
         <h3><a href="https://developer.chrome.com/extensions/tabs#method-remove"
                target="_blank">chrome.tabs.remove()</a></h3>
-        <p>remove tabs after removing browsingData</p>
+        <p class="text">Remove tabs after removing browsingData?</p>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="remove" value="remove" v-model="removeTabs" @click="refreshTabs = false">
+                <input class="form-check-input" type="checkbox" id="remove" value="remove" v-model="removeTabs" @click="refreshTabs = false" v-on:click="saveSettings">
                 remove tabs
             </label>
         </div>
         <br>
-        <button type="submit" class="btn btn-success" v-on:click="saveSettings">Save</button>
-        <button type="submit" class="btn btn-danger" v-on:click="removeHistory">Remove History</button>
+        <button type="submit" class="btn btn-secondary" v-on:click="removeHistory">Clean History</button>
         <notification ref="notification"></notification>
+
     </div>
 
 </template>
@@ -144,7 +144,7 @@
           webSQL: this.webSQL,
         };
         chrome.storage.sync.set({"options": options}, () => {
-          this.$refs.notification.showSuccessNotification("Saved!");
+          this.$refs.notification.showSuccessNotification("Settings saved");
         });
         const tabs = {
           refreshTabs: this.refreshTabs,
@@ -155,7 +155,7 @@
       },
       removeHistory: function () {
         remove();
-        this.$refs.notification.showInfoNotification("History Removed!");
+        this.$refs.notification.showInfoNotification("History cleaned");
       }
     },
     created: function () {
@@ -197,8 +197,11 @@
     a {
         color: black;
     }
-
     a:hover {
-        text-underline: none;
+        text-decoration: none;
+        color: red;
+    }
+    .text {
+        color: red;
     }
 </style>

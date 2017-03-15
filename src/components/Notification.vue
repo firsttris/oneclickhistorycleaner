@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="alert alert-info info" v-bind:class="{ show: isInfoNotificationVisible }">
-      <strong>Info! </strong> {{ infoNotification }}
+      <strong>Info </strong> {{ infoNotification }}
     </div>
     <div class="alert alert-success success" v-bind:class="{ show: isSuccessNotificationVisible }">
-      <strong>Success! </strong> {{ successNotification }}
+      <strong>Success </strong> {{ successNotification }}
     </div>
     <div class="alert alert-warning warning" v-bind:class="{ show: isWarningNotificationVisible }">
-      <strong>Warning! </strong> {{ warningNotification }}
+      <strong>Warning </strong> {{ warningNotification }}
     </div>
   </div>
 </template>
@@ -51,7 +51,7 @@
 </script>
 <style scoped>
   .alert {
-    margin-top: 50px;
+    margin-top: 20px;
     display: none;
   }
   .show {
