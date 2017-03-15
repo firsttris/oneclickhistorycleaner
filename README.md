@@ -1,6 +1,6 @@
 # removereload chrome
 
-:wastebasket: removereload is a history remover extension for Google Chrome with focus on web-developers.
+:wastebasket: RemoveReload is a **one-click** history remover extension for [Google Chrome](https://www.google.de/chrome/browser/desktop/) with focus on web-developers.
 
 ## Features
 
