@@ -1,7 +1,7 @@
 {
   "name": "RemoveReload",
   "version": "0.0.1",
-  "description": "Chrome Extension for SendToKodi",
+  "description": "one-click history remover with hot reload",
   "scripts": {
     "build": "node utils/build.js",
     "start": "node utils/webserver.js"
