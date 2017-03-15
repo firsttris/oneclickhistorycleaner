@@ -1,6 +1,6 @@
 # removereload chrome
 
-:tv: removereload is Google Chrome Extension history remove app with focus on web-developers.
+:wastebasket: removereload is a history remover extension for Google Chrome with focus on web-developers.
 
 ## Features
 
