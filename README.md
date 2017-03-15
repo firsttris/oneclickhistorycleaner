@@ -1,6 +1,5 @@
 # removereload chrome
 
-:wastebasket:   
 Remove&Reload is a **one-click** history remover extension for [Google Chrome](https://www.google.de/chrome/browser/desktop/) with  hot reload.   
 Focused on web-development.
 
