@@ -1,17 +1,12 @@
-# sendToKodi chrome
+# removereload chrome
 
-:tv: sendToKodi Google Chrome Extension let's you send almost every video from chrome to kodi.
+:tv: removereload is Google Chrome Extension history remove app with focus on web-developers.
 
-- supported [sites](https://rg3.github.io/youtube-dl/supportedsites.html)
-- if you send a playlist it will automatically create a playlist and starts playing
+## Features
 
-## Requirement
-
-You need to install our SendToKodi plugin:
-[plugin.video.sendtokodi](https://github.com/firsttris/plugin.video.sendtokodi)
-
-Since we are using [youtube-dl](https://github.com/rg3/youtube-dl) in there is no other plugin dependency.
-Your are basically playing raw streams in Kodi
+- clear chrome history
+- remove all tabs
+- refresh all tabs
 
 ## Stack
 Chrome Extensions uses
