@@ -4,62 +4,62 @@
         <p>remove browsingData</p>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="appcache" value="appcache" v-model="appcache"> appcache
+                <input class="form-check-input" type="checkbox" id="appcache" value="appcache" v-model="options.appcache"> appcache
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="cache" value="cache" v-model="cache"> cache
+                <input class="form-check-input" type="checkbox" id="cache" value="cache" v-model="options.cache"> cache
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="cookies" value="cookies" v-model="cookies"> cookies
+                <input class="form-check-input" type="checkbox" id="cookies" value="cookies" v-model="options.cookies"> cookies
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="downloads" value="downloads" v-model="downloads"> downloads
+                <input class="form-check-input" type="checkbox" id="downloads" value="downloads" v-model="options.downloads"> downloads
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="fileSystems" value="fileSystems" v-model="fileSystems"> fileSystems
+                <input class="form-check-input" type="checkbox" id="fileSystems" value="fileSystems" v-model="options.fileSystems"> fileSystems
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="formData" value="formData" v-model="formData"> formData
+                <input class="form-check-input" type="checkbox" id="formData" value="formData" v-model="options.formData"> formData
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="history" value="history" v-model="history"> history
+                <input class="form-check-input" type="checkbox" id="history" value="history" v-model="options.history"> history
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="indexedDB" value="indexedDB" v-model="indexedDB"> indexedDB
+                <input class="form-check-input" type="checkbox" id="indexedDB" value="indexedDB" v-model="options.indexedDB"> indexedDB
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="localStorage" value="localStorage" v-model="localStorage"> localStorage
+                <input class="form-check-input" type="checkbox" id="localStorage" value="localStorage" v-model="options.localStorage"> localStorage
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="pluginData" value="pluginData" v-model="pluginData"> pluginData
+                <input class="form-check-input" type="checkbox" id="pluginData" value="pluginData" v-model="options.pluginData"> pluginData
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="passwords" value="passwords" v-model="passwords"> passwords
+                <input class="form-check-input" type="checkbox" id="passwords" value="passwords" v-model="options.passwords"> passwords
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="webSQL" value="webSQL" v-model="webSQL"> webSQL
+                <input class="form-check-input" type="checkbox" id="webSQL" value="webSQL" v-model="options.webSQL"> webSQL
             </label>
         </div>
         <br>
@@ -67,7 +67,7 @@
         <p>reload tabs after removing browsingData</p>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="refresh" value="refresh" v-model="refresh"> refresh tabs
+                <input class="form-check-input" type="checkbox" id="refresh" value="refresh" v-model="options.refresh"> refresh tabs
             </label>
         </div>
         <br>
@@ -75,7 +75,7 @@
         <p>remove tabs after removing browsingData</p>
         <div class="form-check">
             <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="remove" value="remove" v-model="remove"> remove tabs
+                <input class="form-check-input" type="checkbox" id="remove" value="remove" v-model="options.remove"> remove tabs
             </label>
         </div>
         <br>
@@ -88,41 +88,27 @@
   export default {
     data () {
       return {
-        appcache: true,
-        cache: true,
-        cookies: true,
-        downloads: true,
-        fileSystems: true,
-        formData: true,
-        history: true,
-        indexedDB: true,
-        localStorage: true,
-        pluginData: true,
-        passwords: true,
-        webSQL: true,
-        refresh: true,
-        remove: true
+        options: {
+          appcache: true,
+          cache: true,
+          cookies: true,
+          downloads: true,
+          fileSystems: true,
+          formData: true,
+          history: true,
+          indexedDB: true,
+          localStorage: true,
+          pluginData: true,
+          passwords: true,
+          webSQL: true,
+          refresh: true,
+          remove: true
+        }
       };
     },
     methods: {
       saveSettings: function () {
-        const options = {
-          appcache: this.appcache,
-          cache: this.cache,
-          cookies: this.cookies,
-          downloads: this.downloads,
-          fileSystems: this.fileSystems,
-          formData: this.formData,
-          history: this.history,
-          indexedDB: this.indexedDB,
-          localStorage: this.localStorage,
-          pluginData: this.pluginData,
-          passwords: this.passwords,
-          webSQL: this.webSQL,
-          refresh: this.refresh,
-          remove: this.remove
-        };
-        chrome.storage.sync.set({ "options": options }, () => {
+        chrome.storage.sync.set({ "options": this.options }, () => {
         });
       }
     },
