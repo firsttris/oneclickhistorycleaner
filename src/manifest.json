@@ -8,7 +8,8 @@
   "permissions": [
     "tabs",
     "storage",
-    "browsingData"
+    "browsingData",
+    "notifications"
   ],
   "icons": {
     "16": "icons/icon16.png",
