@@ -1,17 +1,5 @@
 <template>
-  <div class="routing container">
-    <p>
-      <i class="fa fa-github" aria-hidden="true"></i>
-      <a href="https://github.com/firsttris/chrome.removereload" target="_blank">Source Code</a>
-      &nbsp;
-      <i class="fa fa-copyright" aria-hidden="true"></i>
-      <a href="https://teufel-it.de" target="_blank" class="homepage">teufel-it.de</a>
-    </p>
-    <ul class="nav nav-tabs" role="tablist">
-      <li class="nav-item" @click="settings = true">
-        <router-link class="nav-link" v-bind:class="{ active: settings }" data-toggle="tab" role="tab" to="/settings">Settings</router-link>
-      </li>
-    </ul>
+  <div class="routing container-fluid">
     <router-view></router-view>
   </div>
 </template>
@@ -19,9 +7,7 @@
 <script>
   export default {
     data () {
-      return {
-        settings: true
-      };
+      return {};
     }
   };
 </script>
@@ -37,7 +23,8 @@
   }
   .routing {
     margin-top: 20px;
-    width: 400px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
   }
   .nav {
     margin-bottom: 10px;

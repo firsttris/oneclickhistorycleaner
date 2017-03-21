@@ -1,5 +1,5 @@
 <template>
-    <div class="fields container">
+    <div class="fields container-fluid">
         <h3><a href="https://developer.chrome.com/extensions/browsingData"
                target="_blank">chrome.browsingData.remove()</a></h3>
         <p class="text">What should be deleted?</p>

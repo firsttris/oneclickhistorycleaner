@@ -23,8 +23,7 @@ Focused on web-development.
 * refresh all tabs after cleaning
 
 ## Install
-
-[Chrome Webstore Link](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
+[Go to Chrome Webstore](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
 
 ## Stack
 Chrome Extensions uses
@@ -37,18 +36,14 @@ Chrome Extensions uses
 
 1. Clone
 2. Install [yarn](https://yarnpkg.com): `npm install -g yarn`.
-3. Run `yarn`.
-4. Change the package's name and description on `package.json`.
-5. Change the name of your extension on `src/manifest.json`.
+3. Run `yarn`
 6. Run `npm run start`
 7. Load your extension on Chrome following:
     1. Access `chrome://extensions/`
     2. Check `Developer mode`
     3. Click on `Load unpacked extension`
-    4. Select the `build` folder.
-8. Have fun.
+    4. Select the `build` folder
 
 ## Sources
-I forked this boilerplate and added Buble, VueJs, Bootstraps   
-[chrome-extension-webpack-boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate)  
-Samuel Simões ~ [@samuelsimoes](https://twitter.com/samuelsimoes) ~ [Blog](http://blog.samuelsimoes.com/)
+I forked this boilerplate from 
+[chrome-extension-webpack-boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate)

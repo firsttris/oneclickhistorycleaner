@@ -1,6 +1,6 @@
 {
   "name": "RemoveReload",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "one-click history remover with hot reload",
   "scripts": {
     "build": "node utils/build.js",
