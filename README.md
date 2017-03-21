@@ -25,17 +25,10 @@ Focused on web-development.
 ## Install
 [Go to Chrome Webstore](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
 
-## Stack
-Chrome Extensions uses
-- [Webpack](https://webpack.github.io/)
-- [Buble](https://buble.surge.sh/)
-- [VueJs](https://github.com/vuejs/vue)
-- [Bootstraps](https://github.com/twbs/bootstrap)
-
 ## Development
 
 1. Clone
-2. Install [yarn](https://yarnpkg.com): `npm install -g yarn`.
+2. Install [yarn](https://yarnpkg.com): `npm install -g yarn`
 3. Run `yarn`
 6. Run `npm run start`
 7. Load your extension on Chrome following:
@@ -44,6 +37,11 @@ Chrome Extensions uses
     3. Click on `Load unpacked extension`
     4. Select the `build` folder
 
-## Sources
-I forked this boilerplate from 
-[chrome-extension-webpack-boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate)
+#### Chrome-Extension Stack
+- [Webpack](https://webpack.github.io/)
+- [Buble](https://buble.surge.sh/)
+- [VueJs](https://github.com/vuejs/vue)
+- [Bootstraps](https://github.com/twbs/bootstrap)
+
+#### Sources
+I forked this boilerplate from [chrome-extension-webpack-boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate)
