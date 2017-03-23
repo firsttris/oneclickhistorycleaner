@@ -19,6 +19,7 @@ function remove () {
           formData: true,
           history: true,
           indexedDB: true,
+          serverBoundCertificates: true,
           localStorage: true,
           pluginData: true,
           passwords: true,
