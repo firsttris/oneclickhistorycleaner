@@ -2,91 +2,89 @@
     <div class="fields container-fluid">
         <h3><a href="https://developer.chrome.com/extensions/browsingData"
                target="_blank">chrome.browsingData.remove</a></h3>
-        <p class="text">What should be deleted?</p>
+        <p class="text">What should be removed?</p>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="appcache"
-                       v-model="appcache" @click="saveSettings"> appcache
+                       v-model="appcache" @click="saveSettings"> Appcache
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="cache" v-model="cache"
-                       @click="saveSettings"> cache
+                       @click="saveSettings"> Cache
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="cookies" v-model="cookies"
-                       @click="saveSettings"> cookies
+                       @click="saveSettings"> Cookies
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="downloads"
-                       v-model="downloads" @click="saveSettings"> downloads
+                       v-model="downloads" @click="saveSettings"> Downloads
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="fileSystems"
-                       v-model="fileSystems" @click="saveSettings"> fileSystems
+                       v-model="fileSystems" @click="saveSettings"> FileSystems
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="formData"
-                       v-model="formData" @click="saveSettings"> formData
+                       v-model="formData" @click="saveSettings"> FormData
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="history" v-model="history"
-                       @click="saveSettings">
-                history
+                       @click="saveSettings"> History
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="indexedDB"
-                       v-model="indexedDB" @click="saveSettings"> indexedDB
+                       v-model="indexedDB" @click="saveSettings"> IndexedDB
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="serverBoundCertificates"
-                       v-model="serverBoundCertificates" @click="saveSettings"> serverBoundCertificates
+                       v-model="serverBoundCertificates" @click="saveSettings"> ServerBoundCertificates
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="localStorage"
-                       v-model="localStorage" @click="saveSettings"> localStorage
+                       v-model="localStorage" @click="saveSettings"> LocalStorage
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="pluginData"
-                       v-model="pluginData" @click="saveSettings"> pluginData
+                       v-model="pluginData" @click="saveSettings"> PluginData
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="passwords"
-                       v-model="passwords" @click="saveSettings"> passwords
+                       v-model="passwords" @click="saveSettings"> Passwords
             </label>
         </div>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="webSQL" v-model="webSQL"
-                       @click="saveSettings">
-                webSQL
+                       @click="saveSettings"> WebSQL
             </label>
         </div>
         <br>
         <h3><a href="https://developer.chrome.com/extensions/tabs#method-reload"
                target="_blank">chrome.tabs.reload</a></h3>
-        <p class="text">Reload tabs after removing browsingData?</p>
+        <p class="text">Reload tabs after removing browser data?</p>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="refresh" v-model="refreshTabs"
@@ -97,7 +95,7 @@
         <br>
         <h3><a href="https://developer.chrome.com/extensions/tabs#method-remove"
                target="_blank">chrome.tabs.remove</a></h3>
-        <p class="text">Remove tabs after removing browsingData?</p>
+        <p class="text">Remove tabs after removing browser data?</p>
         <div class="form-check">
             <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="remove" v-model="removeTabs"
@@ -212,15 +210,19 @@
     a {
         color: black;
     }
+
     a:focus, a:hover {
         text-decoration: none;
     }
+
     a:hover {
         color: red;
     }
+
     .text {
         color: red;
     }
+
     .btn {
         margin-bottom: 20px;
     }
