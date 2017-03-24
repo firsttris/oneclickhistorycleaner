@@ -5,22 +5,24 @@ Focused on web-development.
 
 ## Features
 
-* clears browser data
-* what will be deleted?
-  - appcache
-  - cache
-  - cookies
-  - downloads
-  - fileSystems
-  - formData
-  - history
-  - indexedDB
-  - localStorage
-  - pluginData
-  - passwords
-  - webSQL
-* remove all tabs after cleaning
-* refresh all tabs after cleaning
+* Removing browser data
+* Select what should be removed:
+  - Appcache
+  - Cache
+  - Cookies
+  - Downloads
+  - FileSystems
+  - FormData
+  - History
+  - IndexedDB
+  - ServerBoundCertificates
+  - LocalStorage
+  - PluginData
+  - Passwords
+  - WebSQL
+  - ServiceWorkers
+* Remove all tabs after cleaning
+* Refresh all tabs after cleaning
 
 ## Install
 [Go to Chrome Webstore](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)

@@ -81,6 +81,12 @@
                        @click="saveSettings"> WebSQL
             </label>
         </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" id="serviceWorkers" v-model="serviceWorkers"
+                       @click="saveSettings"> ServiceWorkers
+            </label>
+        </div>
         <br>
         <h3><a href="https://developer.chrome.com/extensions/tabs#method-reload"
                target="_blank">chrome.tabs.reload</a></h3>
@@ -127,6 +133,7 @@
         pluginData: true,
         passwords: true,
         webSQL: true,
+        serviceWorkers: true,
         refreshTabs: false,
         removeTabs: false
       };
@@ -147,6 +154,7 @@
           pluginData: this.pluginData,
           passwords: this.passwords,
           webSQL: this.webSQL,
+          serviceWorkers: this.serviceWorkers
         };
         chrome.storage.sync.set({"options": options}, () => {
           chrome.notifications.create('RRNotification', {
@@ -187,6 +195,7 @@
           this.pluginData = result.options.pluginData;
           this.passwords = result.options.passwords;
           this.webSQL = result.options.webSQL;
+          this.serviceWorkers = result.options.serviceWorkers;
         } else {
           chrome.storage.sync.set({"options": this.options}, () => {
           });

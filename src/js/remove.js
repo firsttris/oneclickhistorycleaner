@@ -23,7 +23,8 @@ function remove () {
           localStorage: true,
           pluginData: true,
           passwords: true,
-          webSQL: true
+          webSQL: true,
+          serviceWorkers: true
         };
       }
       chrome.browsingData.remove({
