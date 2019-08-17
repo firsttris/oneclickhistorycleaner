@@ -1,6 +1,6 @@
 {
-  "name": "Remove&Reload",
-  "short_name": "Remove&Reload",
+  "name": "One Click History Cleaner",
+  "short_name": "One Click History Cleaner",
   "options_page": "options.html",
   "background": {
     "page": "background.html"
@@ -12,9 +12,9 @@
     "notifications"
   ],
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
   },
   "browser_action": {
   },

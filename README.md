@@ -1,7 +1,13 @@
-# removereload chrome
+# One Click History Cleaner
 
-Remove&Reload is a **one-click** history remover extension for [Google Chrome](https://www.google.de/chrome/browser/desktop/) with  hot reload.   
-Focused on web-development.
+One Click History Cleaner with hot-reload.
+
+## Motivation
+
+There are many "History Cleaner" out there, but none of them is simple as just one click.
+
+Safety, most Chrome addons have no open source code, or may spy your data. 
+For this Addon you can check the implementation on Github.
 
 ## Features
 
@@ -41,15 +47,8 @@ Focused on web-development.
 
 #### Chrome-Extension Stack
 - [Webpack](https://webpack.github.io/)
-- [Buble](https://buble.surge.sh/)
 - [VueJs](https://github.com/vuejs/vue)
 - [Bootstraps](https://github.com/twbs/bootstrap)
-
-#### Sources
-I forked this boilerplate from [chrome-extension-webpack-boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate)
-
-## Donate
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KEAR9ZC228YCL)
 
 ## License
 See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).

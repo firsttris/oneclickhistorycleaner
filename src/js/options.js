@@ -1,13 +1,13 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import App from "./../components/App.vue"
-import Settings from "./../components/Settings.vue"
+import Vue from "vue";
+import VueRouter from "vue-router";
+import App from "./../components/App.vue";
+import Settings from "./../components/Settings.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
-  {path: '/', component: Settings},
-  { path: "*", component: Settings}
+  { path: "/", component: Settings },
+  { path: "*", component: Settings }
 ];
 
 const router = new VueRouter({
@@ -15,7 +15,7 @@ const router = new VueRouter({
 });
 
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
   render: h => h(App)
 });
