@@ -51,4 +51,4 @@ For this Addon you can check the implementation on Github.
 - [Bootstraps](https://github.com/twbs/bootstrap)
 
 ## License
-See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
+See the [LICENSE](LICENSE.md) file for license rights and limitations.
