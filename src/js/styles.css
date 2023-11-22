@@ -1,0 +1,22 @@
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.routing {
+    margin-top: 20px;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+.nav {
+    margin-bottom: 10px;
+}
+
+.fa {
+    color: red;
+}
