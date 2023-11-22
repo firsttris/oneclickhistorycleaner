@@ -45,15 +45,15 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      title: 'SendToKodi',
+      title: 'OneClickHistoryCleaner',
       filename: 'popup.html'
     }),
     new HtmlWebpackPlugin({
-      title: 'SendToKodi',
+      title: 'OneClickHistoryCleaner',
       filename: 'options.html'
     }),
     new HtmlWebpackPlugin({
-      title: 'SendToKodi',
+      title: 'OneClickHistoryCleaner',
       filename: 'background.html'
     }),
     new CopyWebpackPlugin({
