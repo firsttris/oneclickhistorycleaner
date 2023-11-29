@@ -30,7 +30,6 @@ We prioritize your safety. Unlike many Chrome addons, our code is open source an
   - **Passwords**: Stored passwords
   - **WebSQL**: Data in a Web SQL database
   - **ServiceWorkers**: Service Worker cache
-  * Option to close all tabs post-cleaning.
 * Refresh or remove all tabs after cleaning for a fresh browsing start.
 
 Experience a cleaner and safer browsing experience with our One-Click History Cleaner.
