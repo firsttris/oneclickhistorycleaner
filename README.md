@@ -1,34 +1,39 @@
-# One Click History Cleaner
+# One-Click History Cleaner
 
-One Click History Cleaner with hot-reload.
+## Overview
 
-## Motivation
+Experience the simplicity of cleaning your browsing history with just a single click. Our One-Click History Cleaner is designed to provide a seamless and efficient browsing experience.
 
-There are many "History Cleaner" out there, but none of them is simple as just one click.
+## Why Choose Us?
 
-Safety, most Chrome addons have no open source code, or may spy your data. 
-For this Addon you can check the implementation on Github.
+While there are numerous history cleaners available, none offer the simplicity and efficiency of a one-click operation. 
 
-## Features
+## Trust and Transparency
 
-* Removing browser data
-* Select what should be removed:
-  - Appcache
-  - Cache
-  - Cookies
-  - Downloads
-  - FileSystems
-  - FormData
-  - History
-  - IndexedDB
-  - ServerBoundCertificates
-  - LocalStorage
-  - PluginData
-  - Passwords
-  - WebSQL
-  - ServiceWorkers
-* Remove all tabs after cleaning
-* Refresh all tabs after cleaning
+We prioritize your safety. Unlike many Chrome addons, our code is open source and available for review on GitHub. We believe in transparency and ensure that your data is not spied on or misused.
+
+## Key Features
+
+* Swift removal of browser data.
+* Customizable cleaning options. Choose what you want to remove:
+  - **Appcache**: Application cache
+  - **Cache**: The browser cache that stores images and other resources downloaded by websites
+  - **Cookies**: Cookies set by websites
+  - **Downloads**: Download history
+  - **FileSystems**: File systems created by web applications
+  - **FormData**: Form data, such as usernames and passwords
+  - **History**: Browser history
+  - **IndexedDB**: Data in an IndexedDB database
+  - **ServerBoundCertificates**: Server-bound certificates
+  - **LocalStorage**: Data in local storage
+  - **PluginData**: Data stored by plugins
+  - **Passwords**: Stored passwords
+  - **WebSQL**: Data in a Web SQL database
+  - **ServiceWorkers**: Service Worker cache
+  * Option to close all tabs post-cleaning.
+* Refresh or remove all tabs after cleaning for a fresh browsing start.
+
+Experience a cleaner and safer browsing experience with our One-Click History Cleaner.
 
 ## Install
 [Go to Chrome Webstore](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
@@ -36,19 +41,13 @@ For this Addon you can check the implementation on Github.
 ## Development
 
 1. Clone
-2. Install [yarn](https://yarnpkg.com): `npm install -g yarn`
-3. Run `yarn`
-6. Run `npm run start`
-7. Load your extension on Chrome following:
+1. Install `npm install`
+1. Run `npm run start`
+1. Load your extension on Chrome following:
     1. Access `chrome://extensions/`
-    2. Check `Developer mode`
-    3. Click on `Load unpacked extension`
-    4. Select the `build` folder
-
-#### Chrome-Extension Stack
-- [Webpack](https://webpack.github.io/)
-- [VueJs](https://github.com/vuejs/vue)
-- [Bootstraps](https://github.com/twbs/bootstrap)
+    1. Check `Developer mode`
+    1. Click on `Load unpacked extension`
+    1. Select the `build` folder
 
 ## License
 See the [LICENSE](LICENSE.md) file for license rights and limitations.

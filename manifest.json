@@ -1,23 +1,25 @@
 {
   "name": "One Click History Cleaner",
   "short_name": "One Click History Cleaner",
-  "options_page": "options.html",
   "background": {
-    "page": "background.html"
+    "service_worker": "background.js"
   },
-  "permissions": [
-    "tabs",
-    "storage",
-    "browsingData",
-    "notifications"
-  ],
+  "options_ui": {
+    "page": "options.html"
+  },
+  "permissions": ["tabs", "storage", "browsingData", "notifications"],
   "icons": {
-    "16": "src/img/icon16.png",
-    "48": "src/img/icon48.png",
-    "128": "src/img/icon128.png"
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   },
-  "browser_action": {
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   },
-  "manifest_version": 2,
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  "manifest_version": 3,
+  "version": "0.0.17"
 }
