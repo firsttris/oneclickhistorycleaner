@@ -59,9 +59,7 @@ const defaultOptions = {
       pluginData: true,
       passwords: true,
       webSQL: true,
-      serviceWorkers: true,
-      refreshTabs: false,
-      removeTabs: false
+      serviceWorkers: true
     };
 
 export default {

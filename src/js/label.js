@@ -12,9 +12,7 @@ const dataTypesDE = {
     pluginData: "Daten, die von Plugins gespeichert wurden",
     passwords: "Gespeicherte Passwörter",
     webSQL: "Daten in einer Web SQL-Datenbank",
-    serviceWorkers: "Service Worker-Cache",
-    refreshTabs: "Aktualisiere Tabs",
-    removeTabs: "Entferne Tabs"
+    serviceWorkers: "Service Worker-Cache"
 };
 
 const dataTypesEN = {
@@ -31,9 +29,7 @@ const dataTypesEN = {
     pluginData: "Data stored by plugins",
     passwords: "Stored passwords",
     webSQL: "Data in a Web SQL database",
-    serviceWorkers: "Service Worker cache",
-    refreshTabs: "Refresh tabs",
-    removeTabs: "Remove tabs"
+    serviceWorkers: "Service Worker cache"
 };
 
 const userLanguage = navigator.language || navigator.userLanguage;
