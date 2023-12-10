@@ -1,6 +1,6 @@
 {
   "name": "oneclickhistorycleaner",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "One Click History Cleaner with hot reload",
   "scripts": {
     "build": "webpack --mode production",
