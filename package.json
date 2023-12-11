@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.23.3",
+    "@fontsource/roboto": "^5.0.8",
     "solid-js": "^1.8.6",
     "solid-jsx": "^1.1.4",
     "solid-styled-components": "^0.28.5"

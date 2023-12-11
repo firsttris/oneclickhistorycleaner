@@ -9,44 +9,65 @@ import { useTranslations } from "../i18n/utils";
 import { styled } from "solid-styled-components";
 
 const Container = styled("div")`
-  margin: 1rem 0;
 `;
 
-const Text = styled("h4")`
+const Text = styled("div")`
   color: #333;
-  font-size: 1.2rem;
-  margin-top: 2rem;
+  font-size: 19.2px;
+  font-weight: 600;
+  margin-bottom: 10px;
 `;
 
 const FormCheck = styled("div")`
-  display: block;
-  position: relative;
-  padding-left: 1.25rem;
-  margin-bottom: 0.3rem;
-  cursor: pointer;
-  font-size: 1rem;
+  margin-bottom: 4.8px;
+  font-size: 16px;
   user-select: none;
 `;
 
 const CheckInput = styled("input")`
-  position: absolute;
-  margin-top: 0.3rem;
-  margin-left: -1.25rem;
+  cursor: pointer;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  background-color: #f4f4f4;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+
+  &:checked {
+    background-color: #3f51b5;
+  }
 `;
 
 const SubmitButton = styled("button")`
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
-  display: inline-block;
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
   cursor: pointer;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
+  color: #fff;
+  background-color: #3f51b5;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  
+  &:hover {
+    background-color: #303f9f;
+  }
+  
+  &:active {
+    background-color: #283593;
+  }
+  
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Settings = () => {
@@ -102,7 +123,7 @@ export const Settings = () => {
           </FormCheck>
         )}
       </For>
-      <Text>{t("removeOrReload")}</Text>
+      <Text style={{ "margin-top": '20px'}}>{t("removeOrReload")}</Text>
       <FormCheck>
         <label>
           <CheckInput
