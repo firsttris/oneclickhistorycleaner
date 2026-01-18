@@ -36,18 +36,17 @@ const removeBrowsingData = async (options: chrome.browsingData.DataTypeSet) => {
 };
 
 const removeTabs = async (tabs: chrome.tabs.Tab[]) => {
-  await chrome.tabs.create({});
   for (const tab of tabs) {
-    if (tab?.id && !tab?.title?.startsWith("chrome-extension")) {
-      await chrome.tabs.remove(tab?.id);
+    if (tab.id && !tab.title?.startsWith("chrome-extension")) {
+      await chrome.tabs.remove(tab.id);
     }
   }
 };
 
 const reloadTabs = async (tabs: chrome.tabs.Tab[]) => {
   for (const tab of tabs) {
-    if (!tab?.title?.startsWith("chrome-extension")) {
-      await chrome.tabs.reload();
+    if (!tab.title?.startsWith("chrome-extension")) {
+      await chrome.tabs.reload(tab.id);
     }
   }
 };

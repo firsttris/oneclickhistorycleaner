@@ -39,14 +39,18 @@ Experience a cleaner and safer browsing experience with our One-Click History Cl
 
 ## Development
 
-1. Clone
-1. Install `npm install`
-1. Run `npm run start`
+1. Clone the repository
+1. Install dependencies: `npm install`
+1. Run development server: `npm run start`
 1. Load your extension on Chrome following:
     1. Access `chrome://extensions/`
     1. Check `Developer mode`
     1. Click on `Load unpacked extension`
-    1. Select the `build` folder
+    1. Select the `dist` folder
+
+### Build for Production
+
+Run `npm run build` to create a production build in the `dist` folder.
 
 ## License
-See the [LICENSE](LICENSE.md) file for license rights and limitations.
+See the [LICENSE](LICENSE) file for license rights and limitations.
