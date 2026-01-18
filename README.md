@@ -5,57 +5,145 @@
 [![License](https://img.shields.io/github/license/firsttris/oneclickhistorycleaner)](LICENSE)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kcjbahochamceejpgjkniopafgdhkplb)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
 
-## Overview
+> Clean your browsing history with a single click - Simple, fast, and transparent.
 
-Experience the simplicity of cleaning your browsing history with just a single click. Our One-Click History Cleaner is designed to provide a seamless and efficient browsing experience.
+## ✨ Features
 
-## Why Choose Us?
+- 🚀 **One-Click Operation** - Remove your browsing data instantly
+- ⚙️ **Fully Customizable** - Choose exactly what to clean
+- 🔄 **Auto-Refresh** - Optionally refresh or close all tabs after cleaning
+- 🔒 **Privacy-Focused** - No data collection, fully open source
+- 🎨 **Modern UI** - Built with Solid.js and Tailwind CSS
 
-While there are numerous history cleaners available, none offer the simplicity and efficiency of a one-click operation. 
+## 📦 Installation
 
-## Trust and Transparency
+### Chrome Web Store
+[![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Available-brightgreen?style=for-the-badge&logo=googlechrome)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
 
-We prioritize your safety. Unlike many Chrome addons, our code is open source and available for review on GitHub. We believe in transparency and ensure that your data is not spied on or misused.
+### Microsoft Edge Add-ons
+Compatible with Microsoft Edge (Chromium-based)
 
-## Key Features
+## 🧹 What Can Be Cleaned?
 
-* Swift removal of browser data.
-* Customizable cleaning options. Choose what you want to remove:
-  - **Appcache**: Application cache
-  - **Cache**: The browser cache that stores images and other resources downloaded by websites
-  - **Cookies**: Cookies set by websites
-  - **Downloads**: Download history
-  - **FileSystems**: File systems created by web applications
-  - **FormData**: Form data, such as usernames and passwords
-  - **History**: Browser history
-  - **IndexedDB**: Data in an IndexedDB database
-  - **ServerBoundCertificates**: Server-bound certificates
-  - **LocalStorage**: Data in local storage
-  - **PluginData**: Data stored by plugins
-  - **Passwords**: Stored passwords
-  - **WebSQL**: Data in a Web SQL database
-  - **ServiceWorkers**: Service Worker cache
-* Refresh or remove all tabs after cleaning for a fresh browsing start.
+Configure which types of data to remove:
 
-Experience a cleaner and safer browsing experience with our One-Click History Cleaner.
+| Data Type | Description |
+|-----------|-------------|
+| **Appcache** | Application cache |
+| **Cache** | Browser cache (images, resources, etc.) |
+| **Cookies** | Cookies set by websites |
+| **Downloads** | Download history |
+| **FileSystems** | File systems created by web applications |
+| **FormData** | Saved form data (usernames, passwords) |
+| **History** | Browsing history |
+| **IndexedDB** | IndexedDB database data |
+| **LocalStorage** | Local storage data |
+| **PluginData** | Data stored by plugins |
+| **Passwords** | Stored passwords |
+| **ServiceWorkers** | Service Worker cache |
+| **WebSQL** | Web SQL database data |
 
-## Install
-[Go to Chrome Webstore](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
+## 🛠️ Tech Stack
 
-## Development
+- **Framework**: [Solid.js](https://www.solidjs.com/) - Reactive UI library
+- **Build Tool**: [Vite](https://vitejs.dev/) - Fast build tool
+- **Extension Plugin**: [@crxjs/vite-plugin](https://crxjs.dev/vite-plugin) - Chrome extension support
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
+- **Linting**: [Biome](https://biomejs.dev/) - Fast formatter and linter
+- **Language**: TypeScript
 
-1. Clone the repository
-1. Install dependencies: `npm install`
-1. Run development server: `npm run start`
-1. Load your extension on Chrome following:
-    1. Access `chrome://extensions/`
-    1. Check `Developer mode`
-    1. Click on `Load unpacked extension`
-    1. Select the `dist` folder
+## 💻 Development
 
-### Build for Production
+### Prerequisites
 
-Run `npm run build` to create a production build in the `dist` folder.
+- Node.js 20 or higher
+- npm
 
-## License
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/firsttris/oneclickhistorycleaner.git
+cd oneclickhistorycleaner
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run start
+```
+
+### Load Extension in Chrome
+
+1. Open Chrome and navigate to `chrome://extensions/`
+2. Enable **Developer mode** (toggle in top-right)
+3. Click **Load unpacked**
+4. Select the `dist` folder from the project
+
+The extension will hot-reload as you make changes.
+
+### Available Scripts
+
+```bash
+npm run start      # Start development server with hot reload
+npm run build      # Build for production
+npm run preview    # Preview production build
+npm run lint       # Check code with Biome
+npm run lint:fix   # Fix linting issues
+npm run format     # Format code with Biome
+```
+
+## 📤 Publishing
+
+### Chrome Web Store
+
+GitHub Actions workflow automates publishing to Chrome Web Store.
+
+**Setup:**
+
+1. Generate API credentials following [chrome-webstore-upload-keys](https://github.com/fregante/chrome-webstore-upload-keys)
+2. Run `npx chrome-webstore-upload-keys` to get your `REFRESH_TOKEN`
+3. Add these secrets to your GitHub repository:
+   - `CHROME_EXTENSION_ID`
+   - `CHROME_CLIENT_ID`
+   - `CHROME_CLIENT_SECRET`
+   - `CHROME_REFRESH_TOKEN`
+
+**Deploy:**
+```bash
+# Trigger via GitHub Actions workflow
+gh workflow run submit_chrome_webstore.yml
+```
+
+### Microsoft Edge Add-ons
+
+GitHub Actions workflow automates publishing to Edge Add-ons store.
+
+**Setup:**
+
+1. Go to [Microsoft Partner Center - Publish API](https://partner.microsoft.com/dashboard/microsoftedge/publishapi)
+2. Generate API credentials
+3. Add these secrets to your GitHub repository:
+   - `EDGE_PRODUCT_ID`
+   - `EDGE_CLIENT_ID`
+   - `EDGE_API_KEY`
+
+**Deploy:**
+```bash
+# Trigger via GitHub Actions workflow
+gh workflow run submit_edge_store.yml
+```
+
+## 🔐 Privacy & Security
+
+- **100% Open Source** - All code is available for review
+- **No Tracking** - We don't collect any data
+- **Local Processing** - Everything runs on your device
+- **Transparent Permissions** - Only uses necessary browser APIs
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
 See the [LICENSE](LICENSE) file for license rights and limitations.
