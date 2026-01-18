@@ -1,5 +1,10 @@
 # One-Click History Cleaner
 
+[![Check Build](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml/badge.svg)](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml)
+[![GitHub release](https://img.shields.io/github/v/release/firsttris/oneclickhistorycleaner)](https://github.com/firsttris/oneclickhistorycleaner/releases)
+[![License](https://img.shields.io/github/license/firsttris/oneclickhistorycleaner)](LICENSE)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kcjbahochamceejpgjkniopafgdhkplb)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
+
 ## Overview
 
 Experience the simplicity of cleaning your browsing history with just a single click. Our One-Click History Cleaner is designed to provide a seamless and efficient browsing experience.
