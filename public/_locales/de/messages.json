@@ -1,0 +1,68 @@
+{
+  "appcache": {
+    "message": "Anwendungscache"
+  },
+  "cache": {
+    "message": "Der Browser-Cache, der Bilder und andere Ressourcen speichert, die von Websites heruntergeladen wurden"
+  },
+  "cookies": {
+    "message": "Cookies, die von Websites gesetzt wurden"
+  },
+  "downloads": {
+    "message": "Download-Verlauf"
+  },
+  "fileSystems": {
+    "message": "Dateisysteme, die von Webanwendungen erstellt wurden"
+  },
+  "formData": {
+    "message": "Formulardaten, wie Benutzernamen und Passwörter"
+  },
+  "history": {
+    "message": "Browser-Verlauf"
+  },
+  "indexedDB": {
+    "message": "Daten in einer IndexedDB-Datenbank"
+  },
+  "serverBoundCertificates": {
+    "message": "Servergebundene Zertifikate"
+  },
+  "localStorage": {
+    "message": "Daten im Local Storage"
+  },
+  "pluginData": {
+    "message": "Daten, die von Plugins gespeichert wurden"
+  },
+  "passwords": {
+    "message": "Gespeicherte Passwörter"
+  },
+  "webSQL": {
+    "message": "Daten in einer Web SQL-Datenbank"
+  },
+  "serviceWorkers": {
+    "message": "Service Worker-Cache"
+  },
+  "whatShouldBeRemoved": {
+    "message": "Was soll entfernt werden?"
+  },
+  "removeOrReload": {
+    "message": "Tabs entfernen oder neu laden nach dem Löschen der Browserdaten?"
+  },
+  "refresh": {
+    "message": "Aktualisieren"
+  },
+  "remove": {
+    "message": "Entfernen"
+  },
+  "cleanHistory": {
+    "message": "Verlauf bereinigen"
+  },
+  "notification_saved": {
+    "message": "Einstellungen gespeichert"
+  },
+  "notification_cleaning": {
+    "message": "Browser-Verlauf wird bereinigt..."
+  },
+  "notification_cleaningDone": {
+    "message": "Browser-Verlauf wurde bereinigt"
+  }
+}

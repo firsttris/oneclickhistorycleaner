@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "lib": [
       "dom",
       "dom.iterable",
@@ -17,14 +17,11 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "allowJs": true
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
+    "allowJs": true,
+    "types": ["vite/client", "chrome"]
   },
   "include": [
-    "src"
+    "src",
+    "manifest.json"
   ]
 }

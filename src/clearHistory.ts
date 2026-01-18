@@ -1,4 +1,4 @@
-import { useTranslations } from "./i18n/utils";
+import { t } from "./i18n/utils";
 
 export const defaultOptions: chrome.browsingData.DataTypeSet = {
   appcache: true,
@@ -16,8 +16,6 @@ export const defaultOptions: chrome.browsingData.DataTypeSet = {
   webSQL: true,
   serviceWorkers: true,
 };
-
-const t = useTranslations();
 
 export const createNotification = async (message: string) => {
   await chrome.notifications.create("RRNotification", {
@@ -71,14 +69,14 @@ const handleTabs = async () => {
 const updateAndClearNotification = async () => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   await chrome.notifications.update("RRNotification", {
-    message: t('notification.cleaningDone'),
+    message: t('notification_cleaningDone'),
   });
   await new Promise((resolve) => setTimeout(resolve, 1000));
   await chrome.notifications.clear("RRNotification");
 };
 
 export const clearHistory = async () => {
-  await createNotification(t('notification.cleaning'));
+  await createNotification(t('notification_cleaning'));
   const options = await getOptions();
   await removeBrowsingData(options);
   await handleTabs();

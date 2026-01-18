@@ -1,8 +1,9 @@
 {
   "name": "One Click History Cleaner",
   "short_name": "One Click History Cleaner",
+  "default_locale": "en",
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "src/background.ts"
   },
   "options_ui": {
     "page": "options.html"
