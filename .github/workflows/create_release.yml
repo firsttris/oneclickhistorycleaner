@@ -33,16 +33,22 @@ jobs:
       id: packageVersion
       run: echo "current-version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT           
 
-    - name: Build Extension
+    - name: Build Chrome Extension
       run: npm run build
 
-    - name: Create Release
-      run: cd dist && zip -r ../oneclickhistorycleaner-${{ steps.packageVersion.outputs.current-version }}.zip *
+    - name: Create Release Chrome
+      run: cd dist && zip -r ../oneclickhistorycleaner-chrome-${{ steps.packageVersion.outputs.current-version }}.zip *
+
+    - name: Build Firefox Extension
+      run: npm run build
+    
+    - name: Create Release Firefox
+      run: cd dist && zip -r ../oneclickhistorycleaner-firefox-${{ steps.packageVersion.outputs.current-version }}.zip *
 
     - name: Upload Release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: 'oneclickhistorycleaner-${{ steps.packageVersion.outputs.current-version }}.zip'
+        artifacts: 'oneclickhistorycleaner-chrome-${{ steps.packageVersion.outputs.current-version }}.zip,oneclickhistorycleaner-firefox-${{ steps.packageVersion.outputs.current-version }}.zip'
         token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ steps.packageVersion.outputs.current-version }}
         allowUpdates: true
