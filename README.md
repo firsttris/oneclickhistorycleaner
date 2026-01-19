@@ -66,28 +66,20 @@ Configure which types of data to remove:
 <table>
 <tr>
 <td align="center" width="150">
-<a href="https://www.typescriptlang.org/" target="_blank">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="48" height="48" alt="TypeScript" />
 <br>TypeScript
-</a>
 </td>
 <td align="center" width="150">
-<a href="https://www.solidjs.com/" target="_blank">
 <img src="https://www.solidjs.com/img/logo/without-wordmark/logo.svg" width="48" height="48" alt="Solid.js" />
 <br>Solid.js
-</a>
 </td>
 <td align="center" width="150">
-<a href="https://vitejs.dev/" target="_blank">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="48" height="48" alt="Vite" />
 <br>Vite
-</a>
 </td>
 <td align="center" width="150">
-<a href="https://tailwindcss.com/" target="_blank">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="48" height="48" alt="Tailwind CSS" />
 <br>Tailwind CSS
-</a>
 </td>
 </tr>
 </table>
