@@ -177,16 +177,16 @@ gh workflow run submit_edge_store.yml
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## 📄 License
+See the [LICENSE](LICENSE) file for license rights and limitations.
+
 <div align="center">
 
 ---
 
-Made with ❤️ by the open-source community
+Made by the open-source community
 
 [![GitHub Stars](https://img.shields.io/github/stars/firsttris/oneclickhistorycleaner?style=social)](https://github.com/firsttris/oneclickhistorycleaner)
 [![GitHub Forks](https://img.shields.io/github/forks/firsttris/oneclickhistorycleaner?style=social)](https://github.com/firsttris/oneclickhistorycleaner/fork)
 
 </div>
-
-## 📄 License
-See the [LICENSE](LICENSE) file for license rights and limitations.
