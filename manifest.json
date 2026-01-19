@@ -29,7 +29,7 @@
       "id": "oneclickhistorycleaner@teufel-it.de",
       "strict_min_version": "140.0",
       "data_collection_permissions": {
-        "allow": false
+        "required": ["none"]
       }
     }
   }
