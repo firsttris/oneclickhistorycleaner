@@ -1,5 +1,12 @@
 import { t } from "./i18n/utils";
 
+// Check if a URL belongs to the extension (works for Chrome, Edge, and Firefox)
+const isExtensionUrl = (url?: string) => {
+  if (!url) return false;
+  const extensionUrl = chrome.runtime.getURL("");
+  return url.startsWith(extensionUrl);
+};
+
 export const defaultOptions: chrome.browsingData.DataTypeSet = {
   appcache: true,
   cache: true,
@@ -37,7 +44,7 @@ const removeBrowsingData = async (options: chrome.browsingData.DataTypeSet) => {
 
 const removeTabs = async (tabs: chrome.tabs.Tab[]) => {
   for (const tab of tabs) {
-    if (tab.id && !tab.title?.startsWith("chrome-extension")) {
+    if (tab.id && !isExtensionUrl(tab.url)) {
       await chrome.tabs.remove(tab.id);
     }
   }
@@ -45,7 +52,7 @@ const removeTabs = async (tabs: chrome.tabs.Tab[]) => {
 
 const reloadTabs = async (tabs: chrome.tabs.Tab[]) => {
   for (const tab of tabs) {
-    if (!tab.title?.startsWith("chrome-extension")) {
+    if (!isExtensionUrl(tab.url)) {
       await chrome.tabs.reload(tab.id);
     }
   }

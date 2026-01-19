@@ -24,5 +24,11 @@
     }
   },
   "manifest_version": 3,
-  "version": "0.0.17"
+  "version": "0.0.17",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "oneclickhistorycleaner@teufel-it.de",
+      "strict_min_version": "109.0"
+    }
+  }
 }
