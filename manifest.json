@@ -13,15 +13,13 @@
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
-    "128": "icons/icon128.png",
-    "512": "icons/icon512.png" 
+    "128": "icons/icon128.png"
   },
   "action": {
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
-      "128": "icons/icon128.png",
-      "512": "icons/icon512.png" 
+      "128": "icons/icon128.png"
     }
   },
   "manifest_version": 3,
@@ -29,7 +27,8 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "oneclickhistorycleaner@teufel-it.de",
-      "strict_min_version": "109.0"
+      "strict_min_version": "112.0",
+      "data_collection_permissions": false
     }
   }
 }

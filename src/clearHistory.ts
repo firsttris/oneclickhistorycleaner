@@ -79,9 +79,9 @@ const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const updateAndClearNotification = async () => {
   await delay(2000);
-  await chrome.notifications.update("RRNotification", {
-    message: t('notification_cleaningDone'),
-  });
+  // Firefox doesn't support notifications.update, so clear and create new one
+  await chrome.notifications.clear("RRNotification");
+  await createNotification(t('notification_cleaningDone'));
   await delay(1000);
   await chrome.notifications.clear("RRNotification");
 };
