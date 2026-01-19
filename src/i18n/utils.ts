@@ -5,5 +5,11 @@
  * @returns The localized message
  */
 export const t = (messageName: string, substitutions?: string | string[]): string => {
-  return chrome.i18n.getMessage(messageName, substitutions) || messageName;
+  try {
+    const message = chrome.i18n.getMessage(messageName, substitutions);
+    return message || messageName;
+  } catch (error) {
+    console.error(`Failed to get i18n message for "${messageName}":`, error);
+    return messageName;
+  }
 };

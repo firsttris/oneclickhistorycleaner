@@ -1,11 +1,14 @@
 import { t } from "./i18n/utils";
 
-// Check if a URL belongs to the extension (works for Chrome, Edge, and Firefox)
 const isExtensionUrl = (url?: string) => {
   if (!url) return false;
   const extensionUrl = chrome.runtime.getURL("");
   return url.startsWith(extensionUrl);
 };
+
+export interface TabOptions {
+  removeTabs: boolean;
+}
 
 export const defaultOptions: chrome.browsingData.DataTypeSet = {
   cache: true,
@@ -39,19 +42,21 @@ const removeBrowsingData = async (options: chrome.browsingData.DataTypeSet) => {
 };
 
 const removeTabs = async (tabs: chrome.tabs.Tab[]) => {
-  for (const tab of tabs) {
-    if (tab.id && !isExtensionUrl(tab.url)) {
-      await chrome.tabs.remove(tab.id);
-    }
+  const tabIdsToRemove = tabs
+    .filter(tab => tab.id && !isExtensionUrl(tab.url))
+    .map(tab => tab.id!);
+  
+  if (tabIdsToRemove.length > 0) {
+    await chrome.tabs.remove(tabIdsToRemove);
   }
 };
 
 const reloadTabs = async (tabs: chrome.tabs.Tab[]) => {
-  for (const tab of tabs) {
-    if (!isExtensionUrl(tab.url)) {
-      await chrome.tabs.reload(tab.id);
-    }
-  }
+  const reloadPromises = tabs
+    .filter(tab => tab.id && !isExtensionUrl(tab.url))
+    .map(tab => chrome.tabs.reload(tab.id!));
+  
+  await Promise.all(reloadPromises);
 };
 
 const handleTabs = async () => {
@@ -59,28 +64,45 @@ const handleTabs = async () => {
   if (!tabOptions) {
     return;
   }
-  const normalTabs = await chrome.tabs.query({ windowType: "normal" });
-  if (tabOptions.removeTabs) {
-    await removeTabs(normalTabs);
-    return;
-  } 
-  await reloadTabs(normalTabs);
   
+  const typedTabOptions = tabOptions as TabOptions;
+  const normalTabs = await chrome.tabs.query({ windowType: "normal" });
+  
+  if (typedTabOptions.removeTabs) {
+    await removeTabs(normalTabs);
+  } else {
+    await reloadTabs(normalTabs);
+  }
 };
 
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const updateAndClearNotification = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await delay(2000);
   await chrome.notifications.update("RRNotification", {
     message: t('notification_cleaningDone'),
   });
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await delay(1000);
   await chrome.notifications.clear("RRNotification");
 };
 
 export const clearHistory = async () => {
-  await createNotification(t('notification_cleaning'));
-  const options = await getOptions();
-  await removeBrowsingData(options);
-  await handleTabs();
-  await updateAndClearNotification();
+  try {
+    await createNotification(t('notification_cleaning'));
+    const options = await getOptions();
+    await removeBrowsingData(options);
+    await handleTabs();
+    await updateAndClearNotification();
+  } catch (error) {
+    try {
+      await chrome.notifications.create("RRNotification", {
+        type: "basic",
+        iconUrl: "icons/icon128.png",
+        title: "One Click History Cleaner",
+        message: "An error occurred during cleaning",
+      });
+    } catch (notificationError) {
+      console.error("Failed to show error notification:", notificationError);
+    }
+  }
 };

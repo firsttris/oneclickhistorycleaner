@@ -52,5 +52,20 @@
   },
   "notification_cleaningDone": {
     "message": "Browser-Verlauf wurde bereinigt"
+  },
+  "clearDataOptions": {
+    "message": "Daten-Optionen löschen"
+  },
+  "tabBehavior": {
+    "message": "Tab-Verhalten"
+  },
+  "reloadDescription": {
+    "message": "Seite nach dem Bereinigen neu laden"
+  },
+  "removeDescription": {
+    "message": "Tabs nach dem Bereinigen schließen"
+  },
+  "autoSaveInfo": {
+    "message": "Einstellungen werden automatisch gespeichert, wenn Sie Änderungen vornehmen."
   }
 }

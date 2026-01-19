@@ -52,5 +52,20 @@
   },
   "notification_cleaningDone": {
     "message": "Cleaning Browser History done"
+  },
+  "clearDataOptions": {
+    "message": "Clear Data Options"
+  },
+  "tabBehavior": {
+    "message": "Tab Behavior"
+  },
+  "reloadDescription": {
+    "message": "Reload the page after cleaning"
+  },
+  "removeDescription": {
+    "message": "Close tabs after cleaning"
+  },
+  "autoSaveInfo": {
+    "message": "Settings are automatically saved when you make changes."
   }
 }

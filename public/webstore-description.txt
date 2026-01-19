@@ -1,0 +1,30 @@
+Clean your browsing history instantly with a single click. One-Click History Cleaner delivers the fastest, most effortless way to maintain your privacy and keep your browser running smoothly.
+
+🔒 OPEN SOURCE & TRUSTWORTHY
+
+Your privacy matters. Unlike most extensions that hide their code, we're fully transparent. Our source code is publicly available on GitHub for anyone to review. No hidden tracking, no data collection, no surprises—just honest, privacy-first software you can trust.
+
+✨ KEY FEATURES
+
+• Lightning-fast cleanup with one click
+• Fully customizable cleaning options—choose exactly what to remove:
+   - Cache: Browser cache storing website images and resources
+   - Cache Storage: Service Worker cache storage
+   - Cookies: Website cookies and tracking data
+   - Downloads: Download history records
+   - File Systems: Web application file systems
+   - Form Data: Saved form entries (usernames, passwords, etc.)
+   - History: Complete browsing history
+   - IndexedDB: IndexedDB database content
+   - Local Storage: Website local storage data
+   - Service Workers: Service Worker caches
+• Smart tab management: Close or refresh all tabs after cleaning
+• Instant notifications keep you informed
+• Clean, intuitive interface
+• No background processes draining resources
+
+🚀 WHY CHOOSE ONE-CLICK HISTORY CLEANER?
+
+Most history cleaners are bloated with features you'll never use. We do one thing exceptionally well: give you total control over your browsing data with zero hassle. One click, done.
+
+Perfect for privacy-conscious users, shared computers, or anyone who wants a fresh browsing session without the complexity.

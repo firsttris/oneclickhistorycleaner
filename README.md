@@ -1,10 +1,25 @@
+<div align="center">
+
 # One-Click History Cleaner
 
-[![Check Build](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml/badge.svg)](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome&logo=google-chrome)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
-[![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome%20Users)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
+### 🚀 Clean your browsing history with a single click
+**Simple, fast, and transparent browser extension**
 
-> Clean your browsing history with a single click - Simple, fast, and transparent.
+<img src="public/banner/1280x800.png" alt="One-Click History Cleaner Banner" width="800">
+
+[![Check Build](https://img.shields.io/github/actions/workflow/status/firsttris/oneclickhistorycleaner/check_build.yml?branch=master&label=Build&logo=github&style=flat-square)](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome&logo=google-chrome&style=flat-square)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
+[![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/kcjbahochamceejpgjkniopafgdhkplb?label=Users&style=flat-square)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
+[![License](https://img.shields.io/github/license/firsttris/oneclickhistorycleaner?style=flat-square)](LICENSE)
+
+[Installation](#-installation) •
+[Features](#-features) •
+[Development](#-development) •
+[Contributing](#-contributing)
+
+</div>
+
+---
 
 ## ✨ Features
 
@@ -16,11 +31,15 @@
 
 ## 📦 Installation
 
+<div align="center">
+
 ### Chrome Web Store
-[![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Available-brightgreen?style=for-the-badge&logo=googlechrome)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
+[![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
 
 ### Microsoft Edge Add-ons
-Compatible with Microsoft Edge (Chromium-based)
+[![Compatible with Edge](https://img.shields.io/badge/Microsoft%20Edge-Compatible-0078D4?style=for-the-badge&logo=microsoftedge&logoColor=white)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
+
+</div>
 
 ## 🧹 What Can Be Cleaned?
 
@@ -44,12 +63,26 @@ Configure which types of data to remove:
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Solid.js](https://www.solidjs.com/) - Reactive UI library
-- **Build Tool**: [Vite](https://vitejs.dev/) - Fast build tool
-- **Extension Plugin**: [@crxjs/vite-plugin](https://crxjs.dev/vite-plugin) - Chrome extension support
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
-- **Linting**: [Biome](https://biomejs.dev/) - Fast formatter and linter
-- **Language**: TypeScript
+<table>
+<tr>
+<td align="center" width="150">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="48" height="48" alt="TypeScript" />
+<br>TypeScript
+</td>
+<td align="center" width="150">
+<img src="https://www.solidjs.com/img/logo/without-wordmark/logo.svg" width="48" height="48" alt="Solid.js" />
+<br>Solid.js
+</td>
+<td align="center" width="150">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="48" height="48" alt="Vite" />
+<br>Vite
+</td>
+<td align="center" width="150">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="48" height="48" alt="Tailwind CSS" />
+<br>Tailwind CSS
+</td>
+</tr>
+</table>
 
 ## 💻 Development
 
@@ -143,6 +176,17 @@ gh workflow run submit_edge_store.yml
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+<div align="center">
+
+---
+
+Made with ❤️ by the open-source community
+
+[![GitHub Stars](https://img.shields.io/github/stars/firsttris/oneclickhistorycleaner?style=social)](https://github.com/firsttris/oneclickhistorycleaner)
+[![GitHub Forks](https://img.shields.io/github/forks/firsttris/oneclickhistorycleaner?style=social)](https://github.com/firsttris/oneclickhistorycleaner/fork)
+
+</div>
 
 ## 📄 License
 See the [LICENSE](LICENSE) file for license rights and limitations.

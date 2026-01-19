@@ -4,4 +4,9 @@ import '@fontsource/roboto';
 import './index.css';
 
 const element = document.getElementById('root');
-render(() => <Settings />, element!);
+
+if (element) {
+  render(() => <Settings />, element);
+} else {
+  console.error('Root element not found');
+}
