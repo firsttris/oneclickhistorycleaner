@@ -27,8 +27,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "oneclickhistorycleaner@teufel-it.de",
-      "strict_min_version": "112.0",
-      "data_collection_permissions": false
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "allow": false
+      }
     }
   }
 }
