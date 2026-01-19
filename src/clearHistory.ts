@@ -8,19 +8,15 @@ const isExtensionUrl = (url?: string) => {
 };
 
 export const defaultOptions: chrome.browsingData.DataTypeSet = {
-  appcache: true,
   cache: true,
+  cacheStorage: true,
   cookies: true,
   downloads: true,
   fileSystems: true,
   formData: true,
   history: true,
   indexedDB: true,
-  serverBoundCertificates: true,
   localStorage: true,
-  pluginData: true,
-  passwords: true,
-  webSQL: true,
   serviceWorkers: true,
 };
 

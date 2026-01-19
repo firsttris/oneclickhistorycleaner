@@ -1,9 +1,9 @@
 {
-  "appcache": {
-    "message": "Application cache"
-  },
   "cache": {
     "message": "The browser cache that stores images and other resources downloaded by websites"
+  },
+  "cacheStorage": {
+    "message": "Cache Storage for Service Workers"
   },
   "cookies": {
     "message": "Cookies set by websites"
@@ -23,20 +23,8 @@
   "indexedDB": {
     "message": "Data in an IndexedDB database"
   },
-  "serverBoundCertificates": {
-    "message": "Server-bound certificates"
-  },
   "localStorage": {
     "message": "Data in local storage"
-  },
-  "pluginData": {
-    "message": "Data stored by plugins"
-  },
-  "passwords": {
-    "message": "Stored passwords"
-  },
-  "webSQL": {
-    "message": "Data in a Web SQL database"
   },
   "serviceWorkers": {
     "message": "Service Worker cache"
