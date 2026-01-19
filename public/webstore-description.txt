@@ -1,30 +1,73 @@
-Clean your browsing history instantly with a single click. One-Click History Cleaner delivers the fastest, most effortless way to maintain your privacy and keep your browser running smoothly.
+✨ Clean your browsing history instantly with a single click! ✨
+
+One-Click History Cleaner delivers the fastest, most effortless way to maintain your privacy and keep your browser running smoothly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🔒 OPEN SOURCE & TRUSTWORTHY
 
-Your privacy matters. Unlike most extensions that hide their code, we're fully transparent. Our source code is publicly available on GitHub for anyone to review. No hidden tracking, no data collection, no surprises—just honest, privacy-first software you can trust.
+Your privacy matters. Unlike most extensions that hide their code, we're fully transparent:
 
-✨ KEY FEATURES
+✓ Source code publicly available on GitHub
+✓ No hidden tracking
+✓ No data collection  
+✓ No surprises—just honest, privacy-first software you can trust
 
-• Lightning-fast cleanup with one click
-• Fully customizable cleaning options—choose exactly what to remove:
-   - Cache: Browser cache storing website images and resources
-   - Cache Storage: Service Worker cache storage
-   - Cookies: Website cookies and tracking data
-   - Downloads: Download history records
-   - File Systems: Web application file systems
-   - Form Data: Saved form entries (usernames, passwords, etc.)
-   - History: Complete browsing history
-   - IndexedDB: IndexedDB database content
-   - Local Storage: Website local storage data
-   - Service Workers: Service Worker caches
-• Smart tab management: Close or refresh all tabs after cleaning
-• Instant notifications keep you informed
-• Clean, intuitive interface
-• No background processes draining resources
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ KEY FEATURES
+
+🎯 ONE-CLICK MAGIC
+Lightning-fast cleanup with a single click—no complicated menus or settings
+
+🎛️ COMPLETE CONTROL
+Fully customizable cleaning options—choose exactly what to remove:
+
+   💾 Cache — Browser cache storing website images and resources
+   📦 Cache Storage — Service Worker cache storage
+   🍪 Cookies — Website cookies and tracking data
+   📥 Downloads — Download history records
+   📁 File Systems — Web application file systems
+   📝 Form Data — Saved form entries (usernames, passwords, etc.)
+   📜 History — Complete browsing history
+   🗄️ IndexedDB — IndexedDB database content
+   💿 Local Storage — Website local storage data
+   ⚙️ Service Workers — Service Worker caches
+
+🔄 SMART TAB MANAGEMENT
+Close or refresh all tabs after cleaning for a truly fresh start
+
+🔔 INSTANT NOTIFICATIONS
+Stay informed with clear, helpful notifications
+
+🎨 BEAUTIFUL INTERFACE
+Clean, intuitive design that's a pleasure to use
+
+⚡ ZERO BLOAT
+No background processes draining your system resources
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🚀 WHY CHOOSE ONE-CLICK HISTORY CLEANER?
 
-Most history cleaners are bloated with features you'll never use. We do one thing exceptionally well: give you total control over your browsing data with zero hassle. One click, done.
+Most history cleaners are bloated with features you'll never use. We do one thing exceptionally well: give you total control over your browsing data with zero hassle. 
 
-Perfect for privacy-conscious users, shared computers, or anyone who wants a fresh browsing session without the complexity.
+👉 One click, done. 👈
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ PERFECT FOR:
+
+• Privacy-conscious users
+• Shared computers
+• Anyone who wants a fresh browsing session without the complexity
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💬 NEED HELP OR HAVE FEEDBACK?
+
+We're here to help! If you encounter any issues or have suggestions, please create an issue on our GitHub repository. We actively monitor and respond to all feedback.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Download now and experience the simplest way to protect your privacy! 🛡️
