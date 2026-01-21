@@ -40,7 +40,7 @@ jobs:
       run: cd dist && zip -r ../oneclickhistorycleaner-chrome-${{ steps.packageVersion.outputs.current-version }}.zip *
 
     - name: Build Firefox Extension
-      run: npm run build
+      run: npm run build:firefox
     
     - name: Create Release Firefox
       run: cd dist && zip -r ../oneclickhistorycleaner-firefox-${{ steps.packageVersion.outputs.current-version }}.zip *
