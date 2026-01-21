@@ -3,7 +3,7 @@
   "short_name": "One Click History Cleaner",
   "default_locale": "en",
   "background": {
-    "scripts": ["src/background.ts"],
+    "service_worker": "src/background.ts",
     "type": "module"
   },
   "options_ui": {
