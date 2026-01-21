@@ -47,7 +47,11 @@ const removeTabs = async (tabs: chrome.tabs.Tab[]) => {
     .map(tab => tab.id!);
   
   if (tabIdsToRemove.length > 0) {
+
+    await chrome.tabs.create({ url: 'chrome://newtab' });
     await chrome.tabs.remove(tabIdsToRemove);
+    // Open a new tab so Chrome does not exit
+    
   }
 };
 
