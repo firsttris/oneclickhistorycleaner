@@ -6,9 +6,17 @@ import manifest from './manifest.json' with { type: 'json' };
 import pkg from './package.json' with { type: 'json' };
 
 export default defineConfig(({ mode }) => {
+  const isFirefox = process.env.BROWSER === 'firefox';
+  
   const finalManifest = {
     ...manifest,
     version: pkg.version,
+    background: isFirefox
+      ? {
+          scripts: [manifest.background.service_worker],
+          type: 'module'
+        }
+      : manifest.background,
   };
 
   return {

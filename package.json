@@ -4,6 +4,7 @@
   "description": "One Click History Cleaner with hot reload",
   "scripts": {
     "build": "vite build",
+    "build:firefox": "BROWSER=firefox vite build",
     "build:watch": "vite build --watch",
     "start": "vite",
     "preview": "vite preview",
