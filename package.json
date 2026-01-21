@@ -1,6 +1,6 @@
 {
   "name": "oneclickhistorycleaner",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "One Click History Cleaner with hot reload",
   "scripts": {
     "build": "vite build",
