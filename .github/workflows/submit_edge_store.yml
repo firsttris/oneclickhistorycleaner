@@ -39,7 +39,7 @@ jobs:
       - name: Download release asset
         run: |
           gh release download ${{ steps.version.outputs.current-version }} \
-            -p "oneclickhistorycleaner-${{ steps.version.outputs.current-version }}.zip"
+            -p "oneclickhistorycleaner-chrome-${{ steps.version.outputs.current-version }}.zip"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -47,6 +47,6 @@ jobs:
         uses: wdzeng/edge-addon@v2
         with:
           product-id: ${{ secrets.EDGE_PRODUCT_ID }}
-          zip-path: oneclickhistorycleaner-${{ steps.version.outputs.current-version }}.zip
+          zip-path: oneclickhistorycleaner-chrome-${{ steps.version.outputs.current-version }}.zip
           api-key: ${{ secrets.EDGE_API_KEY }}
           client-id: ${{ secrets.EDGE_CLIENT_ID }}          

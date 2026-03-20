@@ -39,14 +39,14 @@ jobs:
       - name: Download release asset
         run: |
           gh release download ${{ steps.version.outputs.current-version }} \
-            -p "oneclickhistorycleaner-${{ steps.version.outputs.current-version }}.zip"
+            -p "oneclickhistorycleaner-chrome-${{ steps.version.outputs.current-version }}.zip"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload to Chrome Web Store
         uses: mnao305/chrome-extension-upload@v5.0.0
         with:
-          file-path: oneclickhistorycleaner-${{ steps.version.outputs.current-version }}.zip
+          file-path: oneclickhistorycleaner-chrome-${{ steps.version.outputs.current-version }}.zip
           extension-id: ${{ secrets.CHROME_EXTENSION_ID }}
           client-id: ${{ secrets.CHROME_CLIENT_ID }}
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
