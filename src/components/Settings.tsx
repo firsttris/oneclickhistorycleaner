@@ -46,9 +46,9 @@ export const Settings = () => {
   };
 
   return (
-    <div class="min-h-screen flex items-center justify-center p-4">
-      <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full overflow-hidden">
-        <div class="p-6">
+    <div class="min-h-screen flex items-start justify-center p-3 md:p-4">
+      <div class="bg-white border border-gray-200 rounded-md shadow-sm max-w-2xl w-full">
+        <div class="p-4 md:p-5">
           <DataOptions 
             options={options} 
             setOptions={setOptions} 
