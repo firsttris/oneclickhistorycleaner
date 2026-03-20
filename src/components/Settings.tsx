@@ -1,7 +1,6 @@
 import { createSignal, onMount } from "solid-js";
 import { createNotification, defaultOptions, type TabOptions } from "../clearHistory";
 import { t } from "../i18n/utils";
-import { Header } from "./Header";
 import { DataOptions } from "./DataOptions";
 import { TabBehavior } from "./TabBehavior";
 import { CleanButton } from "./CleanButton";
@@ -9,7 +8,7 @@ import { InfoFooter } from "./InfoFooter";
 
 export const Settings = () => {
   const [options, setOptions] = createSignal(defaultOptions);
-  const [removeTabs, setRemoveTabs] = createSignal(false);
+  const [refreshMode, setRefreshMode] = createSignal<"refresh_current" | "refresh_all" | "refresh_all_except_current">("refresh_current");
 
   onMount(async () => {
     try {
@@ -20,8 +19,8 @@ export const Settings = () => {
       }
 
       const tabs = result.tabs as TabOptions | undefined;
-      if (tabs?.removeTabs !== undefined) {
-        setRemoveTabs(tabs.removeTabs);
+      if (tabs?.refreshMode) {
+        setRefreshMode(tabs.refreshMode);
       }
     } catch (error) {
       console.error("Failed to load settings:", error);
@@ -33,7 +32,7 @@ export const Settings = () => {
       await chrome.storage.sync.set({
         options: options(),
         tabs: {
-          removeTabs: removeTabs(),
+          refreshMode: refreshMode(),
         },
       });
       await createNotification(t("notification_saved"));
@@ -56,8 +55,8 @@ export const Settings = () => {
             onSave={saveSettings} 
           />
           <TabBehavior 
-            removeTabs={removeTabs} 
-            setRemoveTabs={setRemoveTabs} 
+            refreshMode={refreshMode} 
+            setRefreshMode={setRefreshMode} 
             onSave={saveSettings} 
           />
           <CleanButton />

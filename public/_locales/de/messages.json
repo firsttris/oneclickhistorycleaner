@@ -62,6 +62,24 @@
   "reloadDescription": {
     "message": "Seite nach dem Bereinigen neu laden"
   },
+  "refreshOnlyCurrentTab": {
+    "message": "Nur aktuellen Tab aktualisieren"
+  },
+  "refreshOnlyCurrentTabDescription": {
+    "message": "Nach dem Bereinigen nur den aktuell aktiven Tab neu laden"
+  },
+  "refreshAllTabs": {
+    "message": "Alle Tabs aktualisieren"
+  },
+  "refreshAllTabsDescription": {
+    "message": "Nach dem Bereinigen alle offenen Tabs neu laden"
+  },
+  "refreshAllExceptCurrentTab": {
+    "message": "Alle Tabs außer aktuellem aktualisieren"
+  },
+  "refreshAllExceptCurrentTabDescription": {
+    "message": "Nach dem Bereinigen alle offenen Tabs außer dem aktuell aktiven Tab neu laden"
+  },
   "removeDescription": {
     "message": "Tabs nach dem Bereinigen schließen"
   },

@@ -7,7 +7,7 @@ const isExtensionUrl = (url?: string) => {
 };
 
 export interface TabOptions {
-  removeTabs: boolean;
+  refreshMode: "refresh_current" | "refresh_all" | "refresh_all_except_current";
 }
 
 export const defaultOptions: chrome.browsingData.DataTypeSet = {
@@ -41,41 +41,67 @@ const removeBrowsingData = async (options: chrome.browsingData.DataTypeSet) => {
   await chrome.browsingData.remove({ since: 0 }, options);
 };
 
-const removeTabs = async (tabs: chrome.tabs.Tab[]) => {
-  const tabIdsToRemove = tabs
-    .filter(tab => tab.id && !isExtensionUrl(tab.url))
-    .map(tab => tab.id!);
-  
-  if (tabIdsToRemove.length > 0) {
-
-    await chrome.tabs.create({ url: 'chrome://newtab' });
-    await chrome.tabs.remove(tabIdsToRemove);
-    // Open a new tab so Chrome does not exit
-    
-  }
+const getActiveTabId = async () => {
+  const [activeTab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
+  return activeTab?.id;
 };
 
-const reloadTabs = async (tabs: chrome.tabs.Tab[]) => {
+const reloadCurrentTab = async () => {
+  const activeTabId = await getActiveTabId();
+  if (!activeTabId) {
+    return;
+  }
+
+  const activeTab = await chrome.tabs.get(activeTabId);
+  if (isExtensionUrl(activeTab.url)) {
+    return;
+  }
+
+  await chrome.tabs.reload(activeTabId);
+};
+
+const reloadAllTabsExceptCurrent = async (tabs: chrome.tabs.Tab[]) => {
+  const activeTabId = await getActiveTabId();
+
+  const reloadPromises = tabs
+    .filter(tab => tab.id && !isExtensionUrl(tab.url) && tab.id !== activeTabId)
+    .map(tab => chrome.tabs.reload(tab.id!));
+
+  await Promise.all(reloadPromises);
+};
+
+const reloadAllTabs = async (tabs: chrome.tabs.Tab[]) => {
   const reloadPromises = tabs
     .filter(tab => tab.id && !isExtensionUrl(tab.url))
     .map(tab => chrome.tabs.reload(tab.id!));
-  
+
   await Promise.all(reloadPromises);
+};
+
+const getRefreshMode = (tabOptions?: TabOptions) => {
+  if (!tabOptions) {
+    return "refresh_current";
+  }
+
+  if (tabOptions.refreshMode) {
+    return tabOptions.refreshMode;
+  }
+
+  return "refresh_current";
 };
 
 const handleTabs = async () => {
   const { tabs: tabOptions } = await chrome.storage.sync.get(["tabs"]);
-  if (!tabOptions) {
-    return;
-  }
-  
-  const typedTabOptions = tabOptions as TabOptions;
+
+  const refreshMode = getRefreshMode(tabOptions as TabOptions | undefined);
   const normalTabs = await chrome.tabs.query({ windowType: "normal" });
-  
-  if (typedTabOptions.removeTabs) {
-    await removeTabs(normalTabs);
+
+  if (refreshMode === "refresh_all_except_current") {
+    await reloadAllTabsExceptCurrent(normalTabs);
+  } else if (refreshMode === "refresh_all") {
+    await reloadAllTabs(normalTabs);
   } else {
-    await reloadTabs(normalTabs);
+    await reloadCurrentTab();
   }
 };
 

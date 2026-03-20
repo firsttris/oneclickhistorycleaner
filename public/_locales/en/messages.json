@@ -62,6 +62,24 @@
   "reloadDescription": {
     "message": "Reload the page after cleaning"
   },
+  "refreshOnlyCurrentTab": {
+    "message": "Refresh only current tab"
+  },
+  "refreshOnlyCurrentTabDescription": {
+    "message": "Reload only the currently active tab after cleaning"
+  },
+  "refreshAllTabs": {
+    "message": "Refresh all tabs"
+  },
+  "refreshAllTabsDescription": {
+    "message": "Reload all open tabs after cleaning"
+  },
+  "refreshAllExceptCurrentTab": {
+    "message": "Refresh all tabs except current"
+  },
+  "refreshAllExceptCurrentTabDescription": {
+    "message": "Reload all open tabs except the currently active tab"
+  },
   "removeDescription": {
     "message": "Close tabs after cleaning"
   },
