@@ -7,7 +7,7 @@ const isExtensionUrl = (url?: string) => {
 };
 
 export interface TabOptions {
-  refreshMode: "refresh_current" | "refresh_all" | "refresh_all_except_current";
+  refreshMode?: "refresh_current" | "refresh_all" | "refresh_all_except_current" | "remove_all_tabs";
 }
 
 export const defaultOptions: chrome.browsingData.DataTypeSet = {
@@ -39,6 +39,19 @@ const getOptions = async () => {
 
 const removeBrowsingData = async (options: chrome.browsingData.DataTypeSet) => {
   await chrome.browsingData.remove({ since: 0 }, options);
+};
+
+const removeAllTabs = async (tabs: chrome.tabs.Tab[]) => {
+  const tabIdsToRemove = tabs
+    .filter(tab => tab.id && !isExtensionUrl(tab.url))
+    .map(tab => tab.id!);
+
+  if (tabIdsToRemove.length === 0) {
+    return;
+  }
+
+  await chrome.tabs.create({ url: "chrome://newtab" });
+  await chrome.tabs.remove(tabIdsToRemove);
 };
 
 const getActiveTabId = async () => {
@@ -96,7 +109,9 @@ const handleTabs = async () => {
   const refreshMode = getRefreshMode(tabOptions as TabOptions | undefined);
   const normalTabs = await chrome.tabs.query({ windowType: "normal" });
 
-  if (refreshMode === "refresh_all_except_current") {
+  if (refreshMode === "remove_all_tabs") {
+    await removeAllTabs(normalTabs);
+  } else if (refreshMode === "refresh_all_except_current") {
     await reloadAllTabsExceptCurrent(normalTabs);
   } else if (refreshMode === "refresh_all") {
     await reloadAllTabs(normalTabs);

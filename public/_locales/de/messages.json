@@ -80,6 +80,12 @@
   "refreshAllExceptCurrentTabDescription": {
     "message": "Nach dem Bereinigen alle offenen Tabs außer dem aktuell aktiven Tab neu laden"
   },
+  "removeAllTabs": {
+    "message": "Alle Tabs schließen"
+  },
+  "removeAllTabsDescription": {
+    "message": "Nach dem Bereinigen alle offenen Tabs schließen"
+  },
   "removeDescription": {
     "message": "Tabs nach dem Bereinigen schließen"
   },

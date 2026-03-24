@@ -8,7 +8,7 @@ import { InfoFooter } from "./InfoFooter";
 
 export const Settings = () => {
   const [options, setOptions] = createSignal(defaultOptions);
-  const [refreshMode, setRefreshMode] = createSignal<"refresh_current" | "refresh_all" | "refresh_all_except_current">("refresh_current");
+  const [refreshMode, setRefreshMode] = createSignal<"refresh_current" | "refresh_all" | "refresh_all_except_current" | "remove_all_tabs">("refresh_current");
 
   onMount(async () => {
     try {

@@ -80,6 +80,12 @@
   "refreshAllExceptCurrentTabDescription": {
     "message": "Reload all open tabs except the currently active tab"
   },
+  "removeAllTabs": {
+    "message": "Remove all tabs"
+  },
+  "removeAllTabsDescription": {
+    "message": "Close all open tabs after cleaning"
+  },
   "removeDescription": {
     "message": "Close tabs after cleaning"
   },
