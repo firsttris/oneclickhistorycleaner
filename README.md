@@ -6,8 +6,8 @@
   [![Check Build](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml/badge.svg)](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml)
   [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome&logo=google-chrome)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
   [![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome%20Users)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
-  [![Mozilla Add-on](https://img.shields.io/amo/v/one-click-history-cleaner?label=Firefox&logo=firefox)](https://addons.mozilla.org/firefox/addon/one-click-history-cleaner/)
-  [![Mozilla Add-on Users](https://img.shields.io/amo/users/one-click-history-cleaner?label=Firefox%20Users)](https://addons.mozilla.org/firefox/addon/one-click-history-cleaner/)
+  [![Mozilla Add-on](https://img.shields.io/amo/v/one-click-history-cleaner?label=Firefox&logo=firefox)](https://addons.mozilla.org/en-US/firefox/addon/one-click-history-cleaner/)
+  [![Mozilla Add-on Users](https://img.shields.io/amo/users/one-click-history-cleaner?label=Firefox%20Users)](https://addons.mozilla.org/en-US/firefox/addon/one-click-history-cleaner/)
 
   Clean your browsing data with a single click - Simple, fast, and open source.
 </div>
@@ -28,10 +28,10 @@
 [![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Available-brightgreen?style=for-the-badge&logo=googlechrome)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
 
 ### Mozilla Add-ons
-[![Get the Add-On](https://img.shields.io/badge/Firefox%20Add--ons-Available-orange?style=for-the-badge&logo=firefox)](https://addons.mozilla.org/firefox/addon/one-click-history-cleaner/)
+[![Get the Add-On](https://img.shields.io/badge/Firefox%20Add--ons-Available-orange?style=for-the-badge&logo=firefox)](https://addons.mozilla.org/en-US/firefox/addon/one-click-history-cleaner/)
 
-### Microsoft Edge
-[![Install from the Chrome Web Store](https://img.shields.io/badge/Microsoft%20Edge-Compatible-blue?style=for-the-badge&logo=microsoftedge)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
+### Microsoft Edge Add-ons
+[![Get the Add-On](https://img.shields.io/badge/Edge%20Add--ons-Available-blue?style=for-the-badge&logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/one-click-history-cleaner/paknkcelopbilnnlolmaigecfhpgooma)
 </div>
 
 ## 🧹 What Can Be Cleaned?
