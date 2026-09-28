@@ -15,7 +15,7 @@
     "message": "Dateisysteme, die von Webanwendungen erstellt wurden"
   },
   "formData": {
-    "message": "Formulardaten, wie Benutzernamen und Passwörter"
+    "message": "Formular-Autofill-Daten (z. B. Adressen)"
   },
   "history": {
     "message": "Browser-Verlauf"
@@ -32,15 +32,6 @@
   "whatShouldBeRemoved": {
     "message": "Was soll entfernt werden?"
   },
-  "removeOrReload": {
-    "message": "Tabs entfernen oder neu laden nach dem Löschen der Browserdaten?"
-  },
-  "refresh": {
-    "message": "Aktualisieren"
-  },
-  "remove": {
-    "message": "Entfernen"
-  },
   "cleanHistory": {
     "message": "Verlauf bereinigen"
   },
@@ -54,13 +45,10 @@
     "message": "Browser-Verlauf wurde bereinigt"
   },
   "clearDataOptions": {
-    "message": "Daten-Optionen löschen"
+    "message": "Zu löschende Daten"
   },
   "tabBehavior": {
     "message": "Tab-Verhalten"
-  },
-  "reloadDescription": {
-    "message": "Seite nach dem Bereinigen neu laden"
   },
   "refreshOnlyCurrentTab": {
     "message": "Nur aktuellen Tab aktualisieren"
@@ -86,10 +74,25 @@
   "removeAllTabsDescription": {
     "message": "Nach dem Bereinigen alle offenen Tabs schließen"
   },
-  "removeDescription": {
-    "message": "Tabs nach dem Bereinigen schließen"
-  },
   "autoSaveInfo": {
-    "message": "Einstellungen werden automatisch gespeichert, wenn Sie Änderungen vornehmen."
+    "message": "Einstellungen werden automatisch gespeichert."
+  },
+  "notification_cleaningFailed": {
+    "message": "Beim Bereinigen ist ein Fehler aufgetreten"
+  },
+  "selectAll": {
+    "message": "Alle auswählen"
+  },
+  "deselectAll": {
+    "message": "Alle abwählen"
+  },
+  "cleaningInProgress": {
+    "message": "Wird bereinigt…"
+  },
+  "cleaningDone": {
+    "message": "Fertig"
+  },
+  "nothingSelected": {
+    "message": "Wählen Sie mindestens einen Datentyp zum Löschen aus."
   }
 }

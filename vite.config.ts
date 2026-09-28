@@ -1,32 +1,31 @@
-import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
 import { crx } from '@crxjs/vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'vite';
+import solidPlugin from 'vite-plugin-solid';
 import manifest from './manifest.json' with { type: 'json' };
 import pkg from './package.json' with { type: 'json' };
 
 export default defineConfig(({ mode }) => {
   const isFirefox = process.env.BROWSER === 'firefox';
-  
+
   const finalManifest = {
     ...manifest,
     version: pkg.version,
     background: isFirefox
       ? {
           scripts: [manifest.background.service_worker],
-          type: 'module'
+          type: 'module',
         }
       : manifest.background,
   };
 
   return {
-    plugins: [
-      solidPlugin(),
-      tailwindcss(),
-      crx({ manifest: finalManifest }),
-    ],
+    define: {
+      'import.meta.env.BROWSER': JSON.stringify(isFirefox ? 'firefox' : 'chrome'),
+    },
+    plugins: [solidPlugin(), tailwindcss(), crx({ manifest: finalManifest })],
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx']
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
     build: {
       sourcemap: mode === 'development',

@@ -88,7 +88,7 @@ Configure which types of data to remove:
 
 ### Prerequisites
 
-- Node.js 20 or higher
+- Node.js 22.12 or higher
 - npm
 
 ### Setup
@@ -121,6 +121,7 @@ npm run start      # Start development server with hot reload
 npm run build      # Build for production
 npm run preview    # Preview production build
 npm run lint       # Check code with Biome
+npm run typecheck  # Type-check with TypeScript 7
 npm run lint:fix   # Fix linting issues
 npm run format     # Format code with Biome
 ```
