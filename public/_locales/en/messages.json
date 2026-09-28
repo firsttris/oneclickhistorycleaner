@@ -15,7 +15,7 @@
     "message": "File systems created by web applications"
   },
   "formData": {
-    "message": "Form data, such as usernames and passwords"
+    "message": "Autofill form data (e.g. addresses)"
   },
   "history": {
     "message": "Browser history"
@@ -31,15 +31,6 @@
   },
   "whatShouldBeRemoved": {
     "message": "What should be removed?"
-  },
-  "removeOrReload": {
-    "message": "Remove or reload tabs after removing browsing data?"
-  },
-  "refresh": {
-    "message": "Refresh"
-  },
-  "remove": {
-    "message": "Remove"
   },
   "cleanHistory": {
     "message": "Clean History"
@@ -58,9 +49,6 @@
   },
   "tabBehavior": {
     "message": "Tab Behavior"
-  },
-  "reloadDescription": {
-    "message": "Reload the page after cleaning"
   },
   "refreshOnlyCurrentTab": {
     "message": "Refresh only current tab"
@@ -86,10 +74,25 @@
   "removeAllTabsDescription": {
     "message": "Close all open tabs after cleaning"
   },
-  "removeDescription": {
-    "message": "Close tabs after cleaning"
-  },
   "autoSaveInfo": {
-    "message": "Settings are automatically saved when you make changes."
+    "message": "Settings are saved automatically."
+  },
+  "notification_cleaningFailed": {
+    "message": "An error occurred during cleaning"
+  },
+  "selectAll": {
+    "message": "Select all"
+  },
+  "deselectAll": {
+    "message": "Deselect all"
+  },
+  "cleaningInProgress": {
+    "message": "Cleaning…"
+  },
+  "cleaningDone": {
+    "message": "Done"
+  },
+  "nothingSelected": {
+    "message": "Select at least one data type to clean."
   }
 }

@@ -1,14 +1,19 @@
-import { t } from "./i18n/utils";
+import { t } from './i18n/utils';
 
-const isExtensionUrl = (url?: string) => {
-  if (!url) return false;
-  const extensionUrl = chrome.runtime.getURL("");
-  return url.startsWith(extensionUrl);
-};
+export const REFRESH_MODES = [
+  'refresh_current',
+  'refresh_all_except_current',
+  'refresh_all',
+  'remove_all_tabs',
+] as const;
+
+export type RefreshMode = (typeof REFRESH_MODES)[number];
 
 export interface TabOptions {
-  refreshMode?: "refresh_current" | "refresh_all" | "refresh_all_except_current" | "remove_all_tabs";
+  refreshMode?: RefreshMode;
 }
+
+export const DEFAULT_REFRESH_MODE: RefreshMode = 'refresh_current';
 
 export const defaultOptions: chrome.browsingData.DataTypeSet = {
   cache: true,
@@ -23,35 +28,53 @@ export const defaultOptions: chrome.browsingData.DataTypeSet = {
   serviceWorkers: true,
 };
 
-export const createNotification = async (message: string) => {
-  await chrome.notifications.create("RRNotification", {
-    type: "basic",
-    iconUrl: "icons/icon128.png",
-    title: "One Click History Cleaner",
+// Firefox rejects the whole browsingData.remove() call if the DataTypeSet contains a key it doesn't know,
+// so nothing would be removed at all. These keys only exist in Chromium-based browsers.
+const CHROMIUM_ONLY_DATA_TYPES: (keyof chrome.browsingData.DataTypeSet)[] = ['cacheStorage', 'fileSystems'];
+
+export const supportedDataTypes = (Object.keys(defaultOptions) as (keyof chrome.browsingData.DataTypeSet)[]).filter(
+  (key) => import.meta.env.BROWSER !== 'firefox' || !CHROMIUM_ONLY_DATA_TYPES.includes(key)
+);
+
+/** Only the data types the current browser supports, missing ones default to `false`. */
+const toSupportedDataTypeSet = (options: chrome.browsingData.DataTypeSet) =>
+  Object.fromEntries(supportedDataTypes.map((key) => [key, options[key] ?? false])) as chrome.browsingData.DataTypeSet;
+
+const NOTIFICATION_ID = 'RRNotification';
+
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const isExtensionUrl = (url?: string) => !!url && url.startsWith(chrome.runtime.getURL(''));
+
+/** Tabs that may be reloaded/closed: they have an id and are not one of our own pages. */
+const getCleanableTabIds = (tabs: chrome.tabs.Tab[], excludeId?: number) =>
+  tabs
+    .filter((tab) => tab.id !== undefined && tab.id !== excludeId && !isExtensionUrl(tab.url))
+    .map((tab) => tab.id as number);
+
+export const showNotification = async (message: string) => {
+  // Firefox doesn't support notifications.update, so clear and create a new one
+  await chrome.notifications.clear(NOTIFICATION_ID);
+  await chrome.notifications.create(NOTIFICATION_ID, {
+    type: 'basic',
+    iconUrl: 'icons/icon128.png',
+    title: 'One Click History Cleaner',
     message,
   });
 };
 
-const getOptions = async () => {
-  const result = await chrome.storage.sync.get(["options"]);
-  return (result.options as chrome.browsingData.DataTypeSet) || defaultOptions;
+export const clearNotification = () => chrome.notifications.clear(NOTIFICATION_ID);
+
+/** Stored options merged over the defaults, so data types added in later versions are picked up. */
+export const loadOptions = async (): Promise<chrome.browsingData.DataTypeSet> => {
+  const { options } = await chrome.storage.sync.get(['options']);
+  return { ...defaultOptions, ...(options as chrome.browsingData.DataTypeSet | undefined) };
 };
 
-const removeBrowsingData = async (options: chrome.browsingData.DataTypeSet) => {
-  await chrome.browsingData.remove({ since: 0 }, options);
-};
-
-const removeAllTabs = async (tabs: chrome.tabs.Tab[]) => {
-  const tabIdsToRemove = tabs
-    .filter(tab => tab.id && !isExtensionUrl(tab.url))
-    .map(tab => tab.id!);
-
-  if (tabIdsToRemove.length === 0) {
-    return;
-  }
-
-  await chrome.tabs.create({ url: "chrome://newtab" });
-  await chrome.tabs.remove(tabIdsToRemove);
+export const loadRefreshMode = async (): Promise<RefreshMode> => {
+  const { tabs } = await chrome.storage.sync.get(['tabs']);
+  const refreshMode = (tabs as TabOptions | undefined)?.refreshMode;
+  return refreshMode && REFRESH_MODES.includes(refreshMode) ? refreshMode : DEFAULT_REFRESH_MODE;
 };
 
 const getActiveTabId = async () => {
@@ -59,95 +82,62 @@ const getActiveTabId = async () => {
   return activeTab?.id;
 };
 
-const reloadCurrentTab = async () => {
-  const activeTabId = await getActiveTabId();
-  if (!activeTabId) {
+const removeAllTabs = async (tabs: chrome.tabs.Tab[]) => {
+  const tabIds = getCleanableTabIds(tabs);
+  if (tabIds.length === 0) {
     return;
   }
 
-  const activeTab = await chrome.tabs.get(activeTabId);
-  if (isExtensionUrl(activeTab.url)) {
-    return;
-  }
-
-  await chrome.tabs.reload(activeTabId);
+  // Open the browser's default new tab page first so the window stays open.
+  // An explicit "chrome://newtab" URL is not allowed in Firefox.
+  await chrome.tabs.create({});
+  await chrome.tabs.remove(tabIds);
 };
 
-const reloadAllTabsExceptCurrent = async (tabs: chrome.tabs.Tab[]) => {
-  const activeTabId = await getActiveTabId();
-
-  const reloadPromises = tabs
-    .filter(tab => tab.id && !isExtensionUrl(tab.url) && tab.id !== activeTabId)
-    .map(tab => chrome.tabs.reload(tab.id!));
-
-  await Promise.all(reloadPromises);
-};
-
-const reloadAllTabs = async (tabs: chrome.tabs.Tab[]) => {
-  const reloadPromises = tabs
-    .filter(tab => tab.id && !isExtensionUrl(tab.url))
-    .map(tab => chrome.tabs.reload(tab.id!));
-
-  await Promise.all(reloadPromises);
-};
-
-const getRefreshMode = (tabOptions?: TabOptions) => {
-  if (!tabOptions) {
-    return "refresh_current";
-  }
-
-  if (tabOptions.refreshMode) {
-    return tabOptions.refreshMode;
-  }
-
-  return "refresh_current";
-};
+const reloadTabs = (tabIds: number[]) => Promise.all(tabIds.map((id) => chrome.tabs.reload(id)));
 
 const handleTabs = async () => {
-  const { tabs: tabOptions } = await chrome.storage.sync.get(["tabs"]);
+  const refreshMode = await loadRefreshMode();
+  const normalTabs = await chrome.tabs.query({ windowType: 'normal' });
 
-  const refreshMode = getRefreshMode(tabOptions as TabOptions | undefined);
-  const normalTabs = await chrome.tabs.query({ windowType: "normal" });
-
-  if (refreshMode === "remove_all_tabs") {
-    await removeAllTabs(normalTabs);
-  } else if (refreshMode === "refresh_all_except_current") {
-    await reloadAllTabsExceptCurrent(normalTabs);
-  } else if (refreshMode === "refresh_all") {
-    await reloadAllTabs(normalTabs);
-  } else {
-    await reloadCurrentTab();
+  switch (refreshMode) {
+    case 'remove_all_tabs':
+      await removeAllTabs(normalTabs);
+      break;
+    case 'refresh_all':
+      await reloadTabs(getCleanableTabIds(normalTabs));
+      break;
+    case 'refresh_all_except_current':
+      await reloadTabs(getCleanableTabIds(normalTabs, await getActiveTabId()));
+      break;
+    default: {
+      const activeTabId = await getActiveTabId();
+      const activeTab = normalTabs.find((tab) => tab.id === activeTabId);
+      if (activeTab) {
+        await reloadTabs(getCleanableTabIds([activeTab]));
+      }
+    }
   }
 };
 
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-const updateAndClearNotification = async () => {
-  await delay(2000);
-  // Firefox doesn't support notifications.update, so clear and create new one
-  await chrome.notifications.clear("RRNotification");
-  await createNotification(t('notification_cleaningDone'));
-  await delay(1000);
-  await chrome.notifications.clear("RRNotification");
-};
-
-export const clearHistory = async () => {
+/** Removes the configured browsing data and applies the tab behavior. Resolves to `true` on success. */
+export const clearHistory = async (): Promise<boolean> => {
   try {
-    await createNotification(t('notification_cleaning'));
-    const options = await getOptions();
-    await removeBrowsingData(options);
+    await showNotification(t('notification_cleaning'));
+    await chrome.browsingData.remove({ since: 0 }, toSupportedDataTypeSet(await loadOptions()));
     await handleTabs();
-    await updateAndClearNotification();
+    await delay(1000);
+    await showNotification(t('notification_cleaningDone'));
+    await delay(1500);
+    await clearNotification();
+    return true;
   } catch (error) {
+    console.error('Failed to clear history:', error);
     try {
-      await chrome.notifications.create("RRNotification", {
-        type: "basic",
-        iconUrl: "icons/icon128.png",
-        title: "One Click History Cleaner",
-        message: "An error occurred during cleaning",
-      });
+      await showNotification(t('notification_cleaningFailed'));
     } catch (notificationError) {
-      console.error("Failed to show error notification:", notificationError);
+      console.error('Failed to show error notification:', notificationError);
     }
+    return false;
   }
 };
