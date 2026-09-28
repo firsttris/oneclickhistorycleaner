@@ -1,65 +1,68 @@
 <div align="center">
 
-# One-Click History Cleaner
+  # One Click History Cleaner
+  <img src="public/banner/1280x800.png" alt="One Click History Cleaner Banner" width="100%" />
 
-### 🚀 Clean your browsing history with a single click
-**Simple, fast, and transparent browser extension**
+  [![Check Build](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml/badge.svg)](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml)
+  [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome&logo=google-chrome)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
+  [![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome%20Users)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
+  [![Mozilla Add-on](https://img.shields.io/amo/v/one-click-history-cleaner?label=Firefox&logo=firefox)](https://addons.mozilla.org/en-US/firefox/addon/one-click-history-cleaner/)
+  [![Mozilla Add-on Users](https://img.shields.io/amo/users/one-click-history-cleaner?label=Firefox%20Users)](https://addons.mozilla.org/en-US/firefox/addon/one-click-history-cleaner/)
 
-<img src="public/banner/1280x800.png" alt="One-Click History Cleaner Banner" width="800">
-
-[![Check Build](https://img.shields.io/github/actions/workflow/status/firsttris/oneclickhistorycleaner/check_build.yml?branch=master&label=Build&logo=github&style=flat-square)](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome&logo=google-chrome&style=flat-square)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
-[![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/kcjbahochamceejpgjkniopafgdhkplb?label=Users&style=flat-square)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
-[![License](https://img.shields.io/github/license/firsttris/oneclickhistorycleaner?style=flat-square)](LICENSE)
-
-[Installation](#-installation) •
-[Features](#-features) •
-[Development](#-development) •
-[Contributing](#-contributing)
-
+  Clean your browsing data with a single click - Simple, fast, and open source.
 </div>
-
----
 
 ## ✨ Features
 
-- 🚀 **One-Click Operation** - Remove your browsing data instantly
-- ⚙️ **Fully Customizable** - Choose exactly what to clean
-- 🔄 **Auto-Refresh** - Optionally refresh or close all tabs after cleaning
+- 🚀 **One-Click Cleaning** - Click the toolbar icon and your browsing data is gone
+- ⚙️ **Fully Customizable** - Choose exactly which data types are removed
+- 🔄 **Tab Behavior** - Reload the current tab, all tabs, or close all tabs after cleaning
+- 💾 **Auto-Save** - Settings are saved instantly and synced with your browser account
+- 🌙 **Dark Mode** - The options page follows your system theme
 - 🔒 **Privacy-Focused** - No data collection, fully open source
-- 🎨 **Modern UI** - Built with Solid.js and Tailwind CSS
 
 ## 📦 Installation
-
 <div align="center">
 
 ### Chrome Web Store
-[![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
+[![Available in the Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Available-brightgreen?style=for-the-badge&logo=googlechrome)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
+
+### Mozilla Add-ons
+[![Get the Add-On](https://img.shields.io/badge/Firefox%20Add--ons-Available-orange?style=for-the-badge&logo=firefox)](https://addons.mozilla.org/en-US/firefox/addon/one-click-history-cleaner/)
 
 ### Microsoft Edge Add-ons
-[![Compatible with Edge](https://img.shields.io/badge/Microsoft%20Edge-Compatible-0078D4?style=for-the-badge&logo=microsoftedge&logoColor=white)](https://chrome.google.com/webstore/detail/removereload/kcjbahochamceejpgjkniopafgdhkplb)
-
+[![Get the Add-On](https://img.shields.io/badge/Edge%20Add--ons-Available-blue?style=for-the-badge&logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/one-click-history-cleaner/paknkcelopbilnnlolmaigecfhpgooma)
 </div>
 
 ## 🧹 What Can Be Cleaned?
 
-Configure which types of data to remove:
+Open the extension's options to choose what is removed when you click the icon. Everything is selected by default.
 
-| Data Type | Description |
-|-----------|-------------|
-| **Appcache** | Application cache |
-| **Cache** | Browser cache (images, resources, etc.) |
-| **Cookies** | Cookies set by websites |
-| **Downloads** | Download history |
-| **FileSystems** | File systems created by web applications |
-| **FormData** | Saved form data (usernames, passwords) |
-| **History** | Browsing history |
-| **IndexedDB** | IndexedDB database data |
-| **LocalStorage** | Local storage data |
-| **PluginData** | Data stored by plugins |
-| **Passwords** | Stored passwords |
-| **ServiceWorkers** | Service Worker cache |
-| **WebSQL** | Web SQL database data |
+| Data Type | Description | Chrome / Edge | Firefox |
+|-----------|-------------|:-------------:|:-------:|
+| **Cache** | Browser cache (images, scripts and other resources) | ✅ | ✅ |
+| **Cache Storage** | Cache Storage used by Service Workers | ✅ | ❌ |
+| **Cookies** | Cookies set by websites | ✅ | ✅ |
+| **Downloads** | Download history (not the files) | ✅ | ✅ |
+| **File Systems** | File systems created by web applications | ✅ | ❌ |
+| **Form Data** | Autofill form data (e.g. addresses) | ✅ | ✅ |
+| **History** | Browsing history | ✅ | ✅ |
+| **IndexedDB** | IndexedDB databases | ✅ | ✅ |
+| **Local Storage** | Local storage data | ✅ | ✅ |
+| **Service Workers** | Registered Service Workers | ✅ | ✅ |
+
+> [!NOTE]
+> Firefox doesn't allow extensions to remove every kind of site storage, so data types marked ❌ are hidden there. The *Cookies and Site Data* size shown in Firefox's own *Clear Recent History* dialog (`Ctrl+Shift+Del`) may therefore not drop to exactly zero.
+
+## 🔐 Permissions
+
+| Permission | Why it is needed |
+|------------|------------------|
+| `browsingData` | Remove the selected browsing data |
+| `storage` | Save your settings |
+| `notifications` | Show a short "cleaning / done" notification |
+
+The extension does not request access to the websites you visit.
 
 ## 🛠️ Tech Stack
 
@@ -88,7 +91,7 @@ Configure which types of data to remove:
 
 ### Prerequisites
 
-- Node.js 22.12 or higher
+- Node.js 22.12 or higher (see `.nvmrc`)
 - npm
 
 ### Setup
@@ -101,71 +104,34 @@ cd oneclickhistorycleaner
 # Install dependencies
 npm install
 
-# Start development server
+# Start development server (Chrome, hot reload)
 npm run start
+
+# Production builds
+npm run build          # Chrome / Edge
+npm run build:firefox  # Firefox
+
+# Lint and typecheck
+npm run lint
+npm run typecheck
 ```
 
-### Load Extension in Chrome
+### Load Extension
 
-1. Open Chrome and navigate to `chrome://extensions/`
-2. Enable **Developer mode** (toggle in top-right)
+**Chrome / Edge:**
+1. Open `chrome://extensions/` (or `edge://extensions/`)
+2. Enable **Developer mode**
 3. Click **Load unpacked**
 4. Select the `dist` folder from the project
 
-The extension will hot-reload as you make changes.
+**Firefox:**
+1. Run `npm run build:firefox`
+2. Open Firefox and navigate to `about:debugging`
+3. Click **This Firefox**
+4. Click **Load Temporary Add-on...**
+5. Select the `manifest.json` in the `dist` folder
 
-### Available Scripts
-
-```bash
-npm run start      # Start development server with hot reload
-npm run build      # Build for production
-npm run preview    # Preview production build
-npm run lint       # Check code with Biome
-npm run typecheck  # Type-check with TypeScript 7
-npm run lint:fix   # Fix linting issues
-npm run format     # Format code with Biome
-```
-
-## 📤 Publishing
-
-### Chrome Web Store
-
-GitHub Actions workflow automates publishing to Chrome Web Store.
-
-**Setup:**
-
-1. Generate API credentials following [chrome-webstore-upload-keys](https://github.com/fregante/chrome-webstore-upload-keys)
-2. Run `npx chrome-webstore-upload-keys` to get your `REFRESH_TOKEN`
-3. Add these secrets to your GitHub repository:
-   - `CHROME_EXTENSION_ID`
-   - `CHROME_CLIENT_ID`
-   - `CHROME_CLIENT_SECRET`
-   - `CHROME_REFRESH_TOKEN`
-
-**Deploy:**
-```bash
-# Trigger via GitHub Actions workflow
-gh workflow run submit_chrome_webstore.yml
-```
-
-### Microsoft Edge Add-ons
-
-GitHub Actions workflow automates publishing to Edge Add-ons store.
-
-**Setup:**
-
-1. Go to [Microsoft Partner Center - Publish API](https://partner.microsoft.com/dashboard/microsoftedge/publishapi)
-2. Generate API credentials
-3. Add these secrets to your GitHub repository:
-   - `EDGE_PRODUCT_ID`
-   - `EDGE_CLIENT_ID`
-   - `EDGE_API_KEY`
-
-**Deploy:**
-```bash
-# Trigger via GitHub Actions workflow
-gh workflow run submit_edge_store.yml
-```
+The development server hot-reloads the extension in Chrome as you make changes.
 
 ## 🔐 Privacy & Security
 
@@ -178,16 +144,42 @@ gh workflow run submit_edge_store.yml
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
-See the [LICENSE](LICENSE) file for license rights and limitations.
+## 📤 Publishing
+<details>
+<summary><b>How releases and store uploads work</b></summary>
 
-<div align="center">
+All stores are handled by a single workflow: **Actions → Release → Run workflow**.
+
+- Leave **version** empty to create a new patch release: the workflow lints, typechecks and builds, then bumps the version, tags it, creates a GitHub release with generated notes and uploads the Chrome and Firefox packages.
+- Enter an existing **version** (e.g. `0.1.25`) to only (re-)submit that release to the stores.
+- Use the **chrome / firefox / edge** checkboxes to choose the stores. The store uploads run in parallel after the release.
+
+```bash
+gh workflow run release.yml                      # new release, all stores
+gh workflow run release.yml -f version=0.1.25 -f edge=false
+```
+
+The Chrome package is uploaded as a draft (`publish: false`) and has to be submitted for review in the developer dashboard. Firefox receives the source archive of the tagged commit for the review.
+
+### Secrets
+
+**Chrome Web Store** (see [chrome-webstore-upload-keys](https://github.com/fregante/chrome-webstore-upload-keys)): `CHROME_EXTENSION_ID`, `CHROME_CLIENT_ID`, `CHROME_CLIENT_SECRET`, `CHROME_REFRESH_TOKEN`. The publisher ID is not secret and is set in the workflow; it is part of the developer dashboard URL (`https://chrome.google.com/webstore/devconsole/<publisher-id>`).
+
+**Mozilla Add-ons** ([API keys](https://addons.mozilla.org/developers/addon/api/key/)): `AMO_JWT_ISSUER`, `AMO_JWT_SECRET`.
+
+**Microsoft Edge Add-ons** ([Publish API](https://partner.microsoft.com/dashboard/microsoftedge/publishapi)): `EDGE_PRODUCT_ID`, `EDGE_CLIENT_ID`, `EDGE_API_KEY`.
+</details>
+
+## 📄 License
+
+See the [LICENSE](LICENSE) file for license rights and limitations.
 
 ---
 
-Made by the open-source community
+<div align="center">
 
-[![GitHub Stars](https://img.shields.io/github/stars/firsttris/oneclickhistorycleaner?style=social)](https://github.com/firsttris/oneclickhistorycleaner)
-[![GitHub Forks](https://img.shields.io/github/forks/firsttris/oneclickhistorycleaner?style=social)](https://github.com/firsttris/oneclickhistorycleaner/fork)
+**Made by the open source community**
+
+⭐ Star us on [GitHub](https://github.com/firsttris/oneclickhistorycleaner) • 🐛 [Report a Bug](https://github.com/firsttris/oneclickhistorycleaner/issues) • 💡 [Request a Feature](https://github.com/firsttris/oneclickhistorycleaner/issues)
 
 </div>
