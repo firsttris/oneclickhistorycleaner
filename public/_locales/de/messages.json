@@ -9,7 +9,7 @@
     "message": "Cookies, die von Websites gesetzt wurden"
   },
   "downloads": {
-    "message": "Download-Verlauf"
+    "message": "Liste der Downloads (die Dateien bleiben)"
   },
   "fileSystems": {
     "message": "Dateisysteme, die von Webanwendungen erstellt wurden"
@@ -18,7 +18,7 @@
     "message": "Formular-Autofill-Daten (z. B. Adressen)"
   },
   "history": {
-    "message": "Browser-Verlauf"
+    "message": "Besuchte Seiten"
   },
   "indexedDB": {
     "message": "Daten in einer IndexedDB-Datenbank"

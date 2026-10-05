@@ -13,7 +13,7 @@ import { DataOptions } from './DataOptions';
 import { TabBehavior } from './TabBehavior';
 import { Badge } from './ui/badge';
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
-import { CheckIcon, Trash2Icon } from './ui/icons';
+import { CheckIcon } from './ui/icons';
 import { Toaster } from './ui/toast';
 
 export const Settings = () => {
@@ -53,9 +53,7 @@ export const Settings = () => {
     <main class="mx-auto max-w-xl px-3 py-4 md:py-8">
       <Card>
         <CardHeader class="flex-wrap">
-          <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <Trash2Icon class="size-[18px]" />
-          </div>
+          <img src="/icons/icon128.png" alt="" class="size-9 shrink-0" />
           <div class="min-w-0 flex-1">
             <h1 class="text-[15px] leading-tight font-semibold tracking-tight">One Click History Cleaner</h1>
             <p class="mt-0.5 text-[13px] text-muted-foreground">{t('whatShouldBeRemoved')}</p>
