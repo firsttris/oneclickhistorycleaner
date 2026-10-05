@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="store-assets/icon512.png" alt="" width="112" height="112" />
+<img src="store-assets/app-icon-512.png" alt="" width="112" height="112" />
 
 # One Click History Cleaner
 
@@ -24,8 +24,8 @@ Choose once what should be removed. From then on, one click on the toolbar icon 
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="store-assets/screenshots/options-dark.png" />
-    <img src="store-assets/screenshots/options-light.png" alt="The settings page: data types grouped into History, Cookies and site data, and Cache, the tab behavior below and a Clean History button" width="460" />
+    <source media="(prefers-color-scheme: dark)" srcset="store-assets/screenshots/settings-dark.png" />
+    <img src="store-assets/screenshots/settings-light.png" alt="The settings page: data types grouped into History, Cookies and site data, and Cache, the tab behavior below and a Clean History button" width="460" />
   </picture>
 </p>
 
