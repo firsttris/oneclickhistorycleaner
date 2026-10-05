@@ -132,7 +132,6 @@ npm run typecheck      # TypeScript
 
 **Load the extension in Firefox:** run `npm run build:firefox`, open `about:debugging`, click **This Firefox**, then **Load Temporary Add-on…** and select `dist/manifest.json`.
 
-The app icon is drawn in `store-assets/icon/icon.svg`. The 16 and 32 px toolbar icons use the simplified `icon-small.svg`.
 
 ### Publishing
 

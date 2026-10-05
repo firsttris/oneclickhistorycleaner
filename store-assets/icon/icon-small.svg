@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <title>One Click History Cleaner</title>
-  <rect width="16" height="16" rx="3.5" fill="#18181b"/>
-  <rect x=".35" y=".35" width="15.3" height="15.3" rx="3.15" fill="none" stroke="#52525b" stroke-width=".7"/>
-  <g transform="translate(1.6 1.6) scale(.5333)" fill="none" stroke="#fafafa" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><path d="M10 11v6"/><path d="M14 11v6"/>
-  </g>
-</svg>
