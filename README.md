@@ -7,11 +7,11 @@
 **Your browsing data, gone with one click.**<br>
 Choose once what should be removed. From then on, one click on the toolbar icon is all it takes.
 
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome&logo=googlechrome&logoColor=white&color=4f46e5)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
-[![Chrome users](https://img.shields.io/chrome-web-store/users/kcjbahochamceejpgjkniopafgdhkplb?label=users&color=4f46e5)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
-[![Firefox Add-on](https://img.shields.io/amo/v/one-click-history-cleaner?label=Firefox&logo=firefoxbrowser&logoColor=white&color=4f46e5)](https://addons.mozilla.org/firefox/addon/one-click-history-cleaner/)
-[![Firefox users](https://img.shields.io/amo/users/one-click-history-cleaner?label=users&color=4f46e5)](https://addons.mozilla.org/firefox/addon/one-click-history-cleaner/)
-[![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-4f46e5)](LICENSE)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
+[![Chrome users](https://img.shields.io/chrome-web-store/users/kcjbahochamceejpgjkniopafgdhkplb?label=users)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
+[![Firefox Add-on](https://img.shields.io/amo/v/one-click-history-cleaner?label=Firefox&logo=firefoxbrowser&logoColor=white)](https://addons.mozilla.org/firefox/addon/one-click-history-cleaner/)
+[![Firefox users](https://img.shields.io/amo/users/one-click-history-cleaner?label=users)](https://addons.mozilla.org/firefox/addon/one-click-history-cleaner/)
+[![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-18181b)](LICENSE)
 [![Check Build](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml/badge.svg)](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml)
 
 <a href="https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb"><img src="https://img.shields.io/badge/Add_to_Chrome-18181b?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Add to Chrome" /></a>
