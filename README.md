@@ -132,7 +132,6 @@ npm run typecheck      # TypeScript
 
 **Load the extension in Firefox:** run `npm run build:firefox`, open `about:debugging`, click **This Firefox**, then **Load Temporary Add-on…** and select `dist/manifest.json`.
 
-
 ### Publishing
 
 <details>
