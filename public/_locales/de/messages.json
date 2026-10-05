@@ -74,9 +74,6 @@
   "removeAllTabsDescription": {
     "message": "Nach dem Bereinigen alle offenen Tabs schließen"
   },
-  "autoSaveInfo": {
-    "message": "Einstellungen werden automatisch gespeichert."
-  },
   "notification_cleaningFailed": {
     "message": "Beim Bereinigen ist ein Fehler aufgetreten"
   },
@@ -94,5 +91,78 @@
   },
   "nothingSelected": {
     "message": "Wählen Sie mindestens einen Datentyp zum Löschen aus."
+  },
+  "group_history": {
+    "message": "Verlauf"
+  },
+  "group_siteData": {
+    "message": "Cookies & Website-Daten"
+  },
+  "group_cache": {
+    "message": "Cache"
+  },
+  "label_history": {
+    "message": "Browserverlauf"
+  },
+  "label_downloads": {
+    "message": "Downloads"
+  },
+  "label_formData": {
+    "message": "Formulardaten"
+  },
+  "label_cookies": {
+    "message": "Cookies"
+  },
+  "label_localStorage": {
+    "message": "Local Storage"
+  },
+  "label_indexedDB": {
+    "message": "IndexedDB"
+  },
+  "label_fileSystems": {
+    "message": "Dateisysteme"
+  },
+  "label_cache": {
+    "message": "Browser-Cache"
+  },
+  "label_cacheStorage": {
+    "message": "Cache Storage"
+  },
+  "label_serviceWorkers": {
+    "message": "Service Worker"
+  },
+  "autoSaved": {
+    "message": "Automatisch gespeichert"
+  },
+  "tabBehaviorDescription": {
+    "message": "Was soll nach dem Bereinigen mit den Tabs passieren?"
+  },
+  "destructive": {
+    "message": "Destruktiv"
+  },
+  "cleanTip": {
+    "message": "Ein Klick auf das Symbol in der Symbolleiste bereinigt sofort mit diesen Einstellungen."
+  },
+  "selectedCount": {
+    "message": "$COUNT$ von $TOTAL$ ausgewählt",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      },
+      "total": {
+        "content": "$2",
+        "example": "10"
+      }
+    }
+  },
+  "toggleGroup": {
+    "message": "$GROUP$: alle umschalten",
+    "placeholders": {
+      "group": {
+        "content": "$1",
+        "example": "Cache"
+      }
+    }
   }
 }

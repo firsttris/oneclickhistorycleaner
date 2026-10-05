@@ -1,43 +1,92 @@
 @import "tailwindcss";
 
-/* Roboto, latin subset only (also covers the German umlauts) and only woff2, which every supported browser reads.
-   The @fontsource/roboto/400.css etc. imports bundled all seven subsets in woff2 and woff, 48 files. */
+/* Geist, latin subset only (also covers the German umlauts) and only woff2, which every supported browser reads. */
 @font-face {
-  font-family: "Roboto";
+  font-family: "Geist";
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url("@fontsource/roboto/files/roboto-latin-400-normal.woff2") format("woff2");
+  src: url("@fontsource/geist-sans/files/geist-sans-latin-400-normal.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Roboto";
+  font-family: "Geist";
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src: url("@fontsource/roboto/files/roboto-latin-500-normal.woff2") format("woff2");
+  src: url("@fontsource/geist-sans/files/geist-sans-latin-500-normal.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Roboto";
+  font-family: "Geist";
   font-style: normal;
   font-display: swap;
-  font-weight: 700;
-  src: url("@fontsource/roboto/files/roboto-latin-700-normal.woff2") format("woff2");
+  font-weight: 600;
+  src: url("@fontsource/geist-sans/files/geist-sans-latin-600-normal.woff2") format("woff2");
 }
 
-@theme {
-  --font-sans: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+/* shadcn/ui theme tokens (new-york, base color zinc). Dark mode follows the system theme. */
+:root {
+  --radius: 0.625rem;
+  --page: oklch(0.967 0.001 286.375);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.21 0.006 285.885);
+  --primary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --success: oklch(0.627 0.194 149.214);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.705 0.015 286.067);
+}
 
-  --color-primary-50: #f0f4ff;
-  --color-primary-100: #e0e7ff;
-  --color-primary-200: #c7d2fe;
-  --color-primary-300: #a5b4fc;
-  --color-primary-400: #818cf8;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-800: #3730a3;
-  --color-primary-900: #312e81;
-  --color-primary-950: #1e1b4b;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: oklch(0 0 0);
+    --background: oklch(0.141 0.005 285.823);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.16 0.005 285.823);
+    --card-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.21 0.006 285.885);
+    --muted: oklch(0.21 0.006 285.885);
+    --muted-foreground: oklch(0.705 0.015 286.067);
+    --accent: oklch(0.21 0.006 285.885);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --success: oklch(0.792 0.209 151.711);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.552 0.016 285.938);
+  }
+}
+
+@theme inline {
+  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-page: var(--page);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 }
 
 @layer base {
@@ -45,7 +94,18 @@
     color-scheme: light dark;
   }
 
+  * {
+    @apply border-border;
+  }
+
   body {
-    @apply min-h-screen bg-primary-50 font-sans text-gray-800 antialiased dark:bg-gray-950 dark:text-gray-100;
+    @apply min-h-screen bg-page font-sans text-foreground antialiased;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
   }
 }
