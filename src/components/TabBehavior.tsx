@@ -1,7 +1,8 @@
-import { type Accessor, For, type Setter } from 'solid-js';
+import { type Accessor, For, type Setter, Show } from 'solid-js';
 import { REFRESH_MODES, type RefreshMode } from '../clearHistory';
 import { t } from '../i18n/utils';
-import { optionCardClass, sectionTitleClass } from './styles';
+import { Badge } from './ui/badge';
+import { TriangleAlertIcon } from './ui/icons';
 
 interface TabBehaviorProps {
   refreshMode: Accessor<RefreshMode>;
@@ -19,14 +20,25 @@ const LABELS: Record<RefreshMode, { title: string; description: string }> = {
   remove_all_tabs: { title: 'removeAllTabs', description: 'removeAllTabsDescription' },
 };
 
+const isDestructive = (mode: RefreshMode) => mode === 'remove_all_tabs';
+
 export const TabBehavior = (props: TabBehaviorProps) => {
   return (
-    <fieldset class="border-t border-gray-200 pt-5 dark:border-gray-800">
-      <legend class={`${sectionTitleClass} float-left mb-2.5 w-full`}>{t('tabBehavior')}</legend>
-      <div class="clear-both space-y-1.5">
+    <fieldset>
+      <legend class="contents">
+        <span class="block text-sm font-medium">{t('tabBehavior')}</span>
+      </legend>
+      <p class="mb-2.5 text-xs text-muted-foreground">{t('tabBehaviorDescription')}</p>
+      <div class="grid gap-2 sm:grid-cols-2">
         <For each={REFRESH_MODES}>
           {(mode) => (
-            <label class={optionCardClass}>
+            <label
+              class="flex min-w-0 cursor-pointer items-start gap-2.5 rounded-lg border p-3 transition-colors hover:bg-accent/60 has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50"
+              classList={{
+                'has-checked:border-primary has-checked:ring-1 has-checked:ring-primary': !isDestructive(mode),
+                'has-checked:border-destructive has-checked:ring-1 has-checked:ring-destructive': isDestructive(mode),
+              }}
+            >
               <input
                 type="radio"
                 name="refreshMode"
@@ -36,11 +48,23 @@ export const TabBehavior = (props: TabBehaviorProps) => {
                   props.setRefreshMode(mode);
                   void props.onSave();
                 }}
-                class="h-4 w-4 shrink-0 cursor-pointer accent-primary-600"
+                class="mt-px grid size-4 shrink-0 cursor-pointer appearance-none place-content-center rounded-full border border-input bg-background shadow-xs outline-none checked:after:size-2 checked:after:rounded-full checked:after:content-[''] dark:bg-input/30"
+                classList={{
+                  'checked:border-primary checked:after:bg-primary': !isDestructive(mode),
+                  'checked:border-destructive checked:after:bg-destructive': isDestructive(mode),
+                }}
               />
-              <span>
-                <span class="block text-xs font-medium text-gray-900 dark:text-gray-100">{t(LABELS[mode].title)}</span>
-                <span class="mt-0.5 block text-[11px] text-gray-600 dark:text-gray-400">
+              <span class="min-w-0">
+                <span class="flex flex-wrap items-center gap-1.5 text-[13px] leading-tight font-medium">
+                  {t(LABELS[mode].title)}
+                  <Show when={isDestructive(mode)}>
+                    <Badge variant="destructive">
+                      <TriangleAlertIcon />
+                      {t('destructive')}
+                    </Badge>
+                  </Show>
+                </span>
+                <span class="mt-0.5 block text-xs leading-snug text-muted-foreground">
                   {t(LABELS[mode].description)}
                 </span>
               </span>

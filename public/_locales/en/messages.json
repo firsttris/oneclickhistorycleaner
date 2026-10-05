@@ -9,7 +9,7 @@
     "message": "Cookies set by websites"
   },
   "downloads": {
-    "message": "Download history"
+    "message": "List of downloads (the files stay)"
   },
   "fileSystems": {
     "message": "File systems created by web applications"
@@ -18,7 +18,7 @@
     "message": "Autofill form data (e.g. addresses)"
   },
   "history": {
-    "message": "Browser history"
+    "message": "Pages you have visited"
   },
   "indexedDB": {
     "message": "Data in an IndexedDB database"
@@ -74,9 +74,6 @@
   "removeAllTabsDescription": {
     "message": "Close all open tabs after cleaning"
   },
-  "autoSaveInfo": {
-    "message": "Settings are saved automatically."
-  },
   "notification_cleaningFailed": {
     "message": "An error occurred during cleaning"
   },
@@ -94,5 +91,78 @@
   },
   "nothingSelected": {
     "message": "Select at least one data type to clean."
+  },
+  "group_history": {
+    "message": "History"
+  },
+  "group_siteData": {
+    "message": "Cookies & site data"
+  },
+  "group_cache": {
+    "message": "Cache"
+  },
+  "label_history": {
+    "message": "Browsing history"
+  },
+  "label_downloads": {
+    "message": "Downloads"
+  },
+  "label_formData": {
+    "message": "Form data"
+  },
+  "label_cookies": {
+    "message": "Cookies"
+  },
+  "label_localStorage": {
+    "message": "Local storage"
+  },
+  "label_indexedDB": {
+    "message": "IndexedDB"
+  },
+  "label_fileSystems": {
+    "message": "File systems"
+  },
+  "label_cache": {
+    "message": "Browser cache"
+  },
+  "label_cacheStorage": {
+    "message": "Cache storage"
+  },
+  "label_serviceWorkers": {
+    "message": "Service workers"
+  },
+  "autoSaved": {
+    "message": "Saved automatically"
+  },
+  "tabBehaviorDescription": {
+    "message": "What should happen to your tabs after cleaning?"
+  },
+  "destructive": {
+    "message": "Destructive"
+  },
+  "cleanTip": {
+    "message": "Clicking the toolbar icon cleans right away with these settings."
+  },
+  "selectedCount": {
+    "message": "$COUNT$ of $TOTAL$ selected",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "8"
+      },
+      "total": {
+        "content": "$2",
+        "example": "10"
+      }
+    }
+  },
+  "toggleGroup": {
+    "message": "$GROUP$: toggle all",
+    "placeholders": {
+      "group": {
+        "content": "$1",
+        "example": "Cache"
+      }
+    }
   }
 }
