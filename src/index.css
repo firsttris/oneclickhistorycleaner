@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+/* Roboto, latin subset only (also covers the German umlauts) and only woff2, which every supported browser reads.
+   The @fontsource/roboto/400.css etc. imports bundled all seven subsets in woff2 and woff, 48 files. */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("@fontsource/roboto/files/roboto-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("@fontsource/roboto/files/roboto-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("@fontsource/roboto/files/roboto-latin-700-normal.woff2") format("woff2");
+}
+
 @theme {
   --font-sans: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
 

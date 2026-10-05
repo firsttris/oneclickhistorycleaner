@@ -1,7 +1,7 @@
 <div align="center">
 
   # One Click History Cleaner
-  <img src="public/banner/1280x800.png" alt="One Click History Cleaner Banner" width="100%" />
+  <img src="store-assets/banner/1280x800.png" alt="One Click History Cleaner Banner" width="100%" />
 
   [![Check Build](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml/badge.svg)](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml)
   [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kcjbahochamceejpgjkniopafgdhkplb?label=Chrome&logo=google-chrome)](https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb)
@@ -158,6 +158,8 @@ A release is a tag `vX.Y.Z`, as in the other projects ([firsttris/workflows](htt
 gh workflow run bump.yml -f bump=minor                          # new release, all stores
 gh workflow run release.yml --ref v0.1.25 -f edge=false      # existing release, again without Edge
 ```
+
+The store listing material (banners, description text, 512 px icon) lives in `store-assets/`, outside `public/`, so it is not packaged into the extension.
 
 The Chrome package is uploaded as a draft (`publish: false`) and has to be submitted for review in the developer dashboard. Firefox receives the source archive of the tagged commit for the review.
 
