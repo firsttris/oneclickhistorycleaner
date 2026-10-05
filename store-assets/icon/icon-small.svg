@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <title>One Click History Cleaner</title>
   <rect width="16" height="16" rx="3.5" fill="#18181b"/>
   <rect x=".35" y=".35" width="15.3" height="15.3" rx="3.15" fill="none" stroke="#52525b" stroke-width=".7"/>
   <g transform="translate(1.7 1.7) scale(.5333)" fill="none" stroke="#fafafa" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
