@@ -161,13 +161,14 @@ The Chrome package is uploaded as a draft (`publish: false`) and has to be submi
 
 </details>
 
-## License
-
-One Click History Cleaner is free software under the [GNU General Public License v3.0](LICENSE).
+---
 
 <div align="center">
-<br>
 
-If it saves you a few clicks every day, a ⭐ on GitHub helps others find it.
+⭐ Like One Click History Cleaner? A [star on GitHub](https://github.com/firsttris/oneclickhistorycleaner) helps others find it.<br>
+🐛 [Report a bug](https://github.com/firsttris/oneclickhistorycleaner/issues/new) · 💡 [Request a feature](https://github.com/firsttris/oneclickhistorycleaner/issues/new)
+
+<sub>License: <a href="LICENSE">GPL-3.0</a> · © Tristan Teufel and contributors<br>
+Changed versions you pass on must stay under the GPL and come with their source code; a commercial license without these obligations is available via <a href="https://teufel-it.de">teufel-it.de</a>.</sub>
 
 </div>
