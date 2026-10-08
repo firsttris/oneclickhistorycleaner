@@ -169,6 +169,6 @@ The Chrome package is uploaded as a draft (`publish: false`) and has to be submi
 🐛 [Report a bug](https://github.com/firsttris/oneclickhistorycleaner/issues/new) · 💡 [Request a feature](https://github.com/firsttris/oneclickhistorycleaner/issues/new)
 
 <sub>License: <a href="LICENSE">GPL-3.0</a> · © Tristan Teufel and contributors<br>
-Free software: changed versions you pass on have to stay under the GPL and come with their source code.</sub>
+Changed versions you pass on must stay under the GPL and come with their source code; a commercial license without these obligations is available via <a href="https://teufel-it.de">teufel-it.de</a>.</sub>
 
 </div>
