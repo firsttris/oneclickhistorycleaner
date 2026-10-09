@@ -151,6 +151,8 @@ gh workflow run release.yml --ref v0.1.25 -f edge=false  # existing release, aga
 
 The store listing material (banners, description text, icon, screenshots) lives in `store-assets/`, outside `public/`, so it is not packaged into the extension.
 
+The two screenshots of the settings page (`store-assets/screenshots/`, light and dark) come from `npm run screenshots`: the built page runs as a plain page in Chromium with a stand-in for the extension API (`screenshots/chrome-stub.ts`). After a change to the look, run **Actions → Update screenshots → Run workflow**: it takes them in the official Playwright image and commits the ones that changed.
+
 The Chrome package is uploaded as a draft (`publish: false`) and has to be submitted for review in the developer dashboard. Firefox receives the source archive of the tagged commit for the review.
 
 **Chrome Web Store** secrets (see [chrome-webstore-upload-keys](https://github.com/fregante/chrome-webstore-upload-keys)): `CHROME_EXTENSION_ID`, `CHROME_CLIENT_ID`, `CHROME_CLIENT_SECRET`, `CHROME_REFRESH_TOKEN`. The publisher ID is not secret and is set in the workflow; it is part of the developer dashboard URL (`https://chrome.google.com/webstore/devconsole/<publisher-id>`).
