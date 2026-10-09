@@ -1,0 +1,15 @@
+name: Update screenshots
+
+# Takes the pictures of the settings page, light and dark (store-assets/screenshots/,
+# npm run screenshots), and commits the ones that changed. Run it after a change to the look.
+on:
+  workflow_dispatch:
+
+jobs:
+  screenshots:
+    uses: firsttris/workflows/.github/workflows/screenshots.yml@v1
+    with:
+      command: npm run screenshots
+      paths: store-assets/screenshots
+    permissions:
+      contents: write
