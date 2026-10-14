@@ -1,0 +1,57 @@
+Ihre Browserdaten, mit einem Klick gelöscht.
+
+Der Dialog „Browserdaten löschen“ Ihres Browsers stellt jedes Mal dieselben Fragen. One Click History Cleaner merkt sich Ihre Antworten. Legen Sie einmal fest, was entfernt werden soll – danach genügt ein Klick auf das Symbol in der Symbolleiste.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ WAS ES KANN
+
+• Ein Klick. Keine Menüs, kein Dialog, keine Rückfrage.
+• Sie entscheiden, was gelöscht wird. Zehn Datentypen, jeder mit eigenem Häkchen.
+• Wichtige Websites behalten. Tragen Sie Websites wie github.com in die Ausnahmeliste ein, damit deren Cookies, Website-Daten und Verlauf erhalten bleiben und Sie angemeldet bleiben. Subdomains sind eingeschlossen: google.com behält auch mail.google.com.
+• Tabs nach Ihren Wünschen. Den aktuellen Tab neu laden, alle Tabs, alle außer dem aktuellen, oder alle Tabs schließen für einen Neustart.
+• Eine kurze Benachrichtigung meldet, wenn alles erledigt ist.
+• Einstellungen werden sofort gespeichert und mit Ihrem Browserkonto synchronisiert.
+• Hell und dunkel: Die Einstellungsseite folgt Ihrem System.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧹 WAS GELÖSCHT WERDEN KANN
+
+Verlauf
+• Browserverlauf: besuchte Seiten
+• Downloads: die Liste der Downloads (die Dateien selbst bleiben)
+• Formulardaten: Autofill-Einträge wie Adressen
+
+Cookies & Website-Daten
+• Cookies: dort speichern Websites Ihre Anmeldungen
+• Local Storage, IndexedDB und Dateisysteme: Daten, die Websites in Ihrem Browser ablegen
+
+Cache
+• Browser-Cache: Bilder, Skripte und andere heruntergeladene Ressourcen
+• Cache Storage und Service Worker
+
+Gespeicherte Passwörter, Lesezeichen und Erweiterungen werden nie angetastet.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔒 DATENSCHUTZ VON ANFANG AN
+
+• Läuft vollständig auf Ihrem Gerät. Es wird nichts gesendet und keine Daten gesammelt.
+• Kein Zugriff auf die Websites, die Sie besuchen.
+• Der Zugriff auf Ihren Verlauf ist optional und wird erst angefragt, wenn Sie die erste Website zur Ausnahmeliste hinzufügen, damit deren Verlaufseinträge erhalten bleiben.
+• Der gesamte Code ist Open Source: https://github.com/firsttris/oneclickhistorycleaner
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 SO GEHT'S
+
+1. Heften Sie die Erweiterung an die Symbolleiste an.
+2. Klicken Sie auf das Symbol. Ihre Browserdaten werden sofort entfernt. Standardmäßig ist alles ausgewählt.
+3. Um festzulegen, was gelöscht wird oder welche Websites erhalten bleiben, klicken Sie mit der rechten Maustaste auf das Symbol und wählen Sie „Optionen“.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💬 FEEDBACK
+
+Fehler gefunden oder eine Idee? Erstellen Sie ein Issue auf GitHub: https://github.com/firsttris/oneclickhistorycleaner/issues

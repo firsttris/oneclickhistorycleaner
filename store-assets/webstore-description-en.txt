@@ -1,0 +1,57 @@
+Your browsing data, gone with one click.
+
+Your browser's own "Clear browsing data" dialog asks the same questions every time. One Click History Cleaner remembers your answers. Choose once what should be removed, and from then on a single click on the toolbar icon is all it takes.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ WHAT IT DOES
+
+• One click. No menus, no dialog, no confirmation.
+• You decide what goes. Ten data types, each with its own checkbox.
+• Keep the sites you need. Add sites like github.com to the exclusion list to keep their cookies, site data and history, so you stay logged in. A site covers its subdomains too, so google.com also keeps mail.google.com.
+• Tabs the way you want. Reload the current tab, all tabs, all but the current one, or close every tab for a clean start.
+• One short notification tells you when it's done.
+• Settings save instantly and sync with your browser account.
+• Light and dark: the settings page follows your system theme.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧹 WHAT CAN BE CLEANED
+
+History
+• Browsing history: pages you have visited
+• Downloads: the list of downloads (the files themselves stay)
+• Form data: autofill entries such as addresses
+
+Cookies & site data
+• Cookies: where websites keep your logins
+• Local storage, IndexedDB and file systems: data websites store in your browser
+
+Cache
+• Browser cache: images, scripts and other downloaded resources
+• Cache storage and service workers
+
+Saved passwords, bookmarks and extensions are never touched.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔒 PRIVATE BY DESIGN
+
+• Runs entirely on your device. It sends nothing anywhere and collects no data.
+• No access to the websites you visit.
+• Access to your history is optional and only asked for when you add the first site to keep, so their history entries can stay.
+• All of the code is open source: https://github.com/firsttris/oneclickhistorycleaner
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 HOW TO USE
+
+1. Pin the extension to your toolbar.
+2. Click the icon. Your browsing data is removed right away. Everything is selected by default.
+3. To change what gets removed, or which sites to keep, right-click the icon and choose Options.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💬 FEEDBACK
+
+Found a bug or have an idea? Open an issue on GitHub: https://github.com/firsttris/oneclickhistorycleaner/issues
