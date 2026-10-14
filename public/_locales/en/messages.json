@@ -38,9 +38,6 @@
   "notification_saved": {
     "message": "Settings saved"
   },
-  "notification_cleaning": {
-    "message": "Cleaning Browser History"
-  },
   "notification_cleaningDone": {
     "message": "Cleaning Browser History done"
   },
@@ -164,5 +161,41 @@
         "example": "Cache"
       }
     }
+  },
+  "exclusions": {
+    "message": "Keep these sites"
+  },
+  "exclusionsDescription": {
+    "message": "Cookies, site data, cache and history of these sites and their subdomains are kept, so you stay logged in. Downloads and form data are always removed."
+  },
+  "exclusionsDescriptionFirefox": {
+    "message": "History entries of these sites and their subdomains are kept. Firefox doesn't let extensions keep cookies or site data for single sites, so these are always removed."
+  },
+  "exclusionPlaceholder": {
+    "message": "e.g. github.com"
+  },
+  "addExclusion": {
+    "message": "Add"
+  },
+  "removeExclusion": {
+    "message": "Remove $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "github.com"
+      }
+    }
+  },
+  "invalidExclusion": {
+    "message": "Enter a domain such as github.com or *.google.com."
+  },
+  "noExclusions": {
+    "message": "No sites excluded. Everything selected above is removed for every site."
+  },
+  "historyPermissionHint": {
+    "message": "To keep the history entries of these sites, allow access to your history."
+  },
+  "grantHistoryPermission": {
+    "message": "Allow"
   }
 }

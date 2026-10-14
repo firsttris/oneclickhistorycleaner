@@ -45,6 +45,7 @@ export const chromeStub = () => {
       tabs: { query: async () => [], create: noop, reload: noop, remove: noop },
       browsingData: { remove: async () => {} },
       notifications: { create: noop, clear: noop },
+      permissions: { contains: async () => true, request: async () => true },
     };
   })();`;
 };

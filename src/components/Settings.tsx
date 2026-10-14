@@ -2,6 +2,7 @@ import { createSignal, onCleanup, onMount } from 'solid-js';
 import {
   DEFAULT_REFRESH_MODE,
   defaultOptions,
+  loadExclusions,
   loadOptions,
   loadRefreshMode,
   type RefreshMode,
@@ -10,6 +11,7 @@ import {
 import { t } from '../i18n/utils';
 import { CleanButton } from './CleanButton';
 import { DataOptions } from './DataOptions';
+import { Exclusions } from './Exclusions';
 import { TabBehavior } from './TabBehavior';
 import { Badge } from './ui/badge';
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
@@ -19,6 +21,7 @@ import { Toaster } from './ui/toast';
 export const Settings = () => {
   const [options, setOptions] = createSignal(defaultOptions);
   const [refreshMode, setRefreshMode] = createSignal<RefreshMode>(DEFAULT_REFRESH_MODE);
+  const [exclusions, setExclusions] = createSignal<string[]>([]);
   const [saved, setSaved] = createSignal(false);
   let savedTimeout: ReturnType<typeof setTimeout> | undefined;
 
@@ -26,6 +29,7 @@ export const Settings = () => {
     try {
       setOptions(await loadOptions());
       setRefreshMode(await loadRefreshMode());
+      setExclusions(await loadExclusions());
     } catch (error) {
       console.error('Failed to load settings:', error);
     }
@@ -38,6 +42,7 @@ export const Settings = () => {
       await chrome.storage.sync.set({
         options: options(),
         tabs: { refreshMode: refreshMode() },
+        exclusions: exclusions(),
       });
       setSaved(true);
       clearTimeout(savedTimeout);
@@ -70,6 +75,8 @@ export const Settings = () => {
           <DataOptions options={options} setOptions={setOptions} onSave={saveSettings} />
           <hr />
           <TabBehavior refreshMode={refreshMode} setRefreshMode={setRefreshMode} onSave={saveSettings} />
+          <hr />
+          <Exclusions exclusions={exclusions} setExclusions={setExclusions} onSave={saveSettings} />
         </CardContent>
 
         <CardFooter>

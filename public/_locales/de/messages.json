@@ -38,9 +38,6 @@
   "notification_saved": {
     "message": "Einstellungen gespeichert"
   },
-  "notification_cleaning": {
-    "message": "Browser-Verlauf wird bereinigt..."
-  },
   "notification_cleaningDone": {
     "message": "Browser-Verlauf wurde bereinigt"
   },
@@ -164,5 +161,41 @@
         "example": "Cache"
       }
     }
+  },
+  "exclusions": {
+    "message": "Diese Websites behalten"
+  },
+  "exclusionsDescription": {
+    "message": "Cookies, Website-Daten, Cache und Verlauf dieser Websites und ihrer Subdomains bleiben erhalten, damit Sie angemeldet bleiben. Downloads und Formulardaten werden immer entfernt."
+  },
+  "exclusionsDescriptionFirefox": {
+    "message": "Verlaufseinträge dieser Websites und ihrer Subdomains bleiben erhalten. Firefox erlaubt Erweiterungen nicht, Cookies oder Website-Daten einzelner Websites zu behalten, daher werden diese immer entfernt."
+  },
+  "exclusionPlaceholder": {
+    "message": "z. B. github.com"
+  },
+  "addExclusion": {
+    "message": "Hinzufügen"
+  },
+  "removeExclusion": {
+    "message": "$DOMAIN$ entfernen",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "github.com"
+      }
+    }
+  },
+  "invalidExclusion": {
+    "message": "Geben Sie eine Domain wie github.com oder *.google.com ein."
+  },
+  "noExclusions": {
+    "message": "Keine Websites ausgenommen. Alles oben Ausgewählte wird für jede Website entfernt."
+  },
+  "historyPermissionHint": {
+    "message": "Um die Verlaufseinträge dieser Websites zu behalten, erlauben Sie den Zugriff auf Ihren Verlauf."
+  },
+  "grantHistoryPermission": {
+    "message": "Erlauben"
   }
 }
