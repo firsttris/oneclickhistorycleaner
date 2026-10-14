@@ -8,7 +8,7 @@ Der Dialog „Browserdaten löschen“ Ihres Browsers stellt jedes Mal dieselben
 
 • Ein Klick. Keine Menüs, kein Dialog, keine Rückfrage.
 • Sie entscheiden, was gelöscht wird. Zehn Datentypen, jeder mit eigenem Häkchen.
-• Wichtige Websites behalten. Tragen Sie Websites wie github.com in die Ausnahmeliste ein, damit deren Cookies, Website-Daten und Verlauf erhalten bleiben und Sie angemeldet bleiben. Subdomains sind eingeschlossen: google.com behält auch mail.google.com.
+• Wichtige Websites behalten. Tragen Sie Websites wie github.com in die Ausnahmeliste ein, damit deren Cookies, Website-Daten und Verlauf erhalten bleiben und Sie angemeldet bleiben. Subdomains sind eingeschlossen: google.com behält auch mail.google.com. (In Firefox bleiben nur Verlaufseinträge erhalten.)
 • Tabs nach Ihren Wünschen. Den aktuellen Tab neu laden, alle Tabs, alle außer dem aktuellen, oder alle Tabs schließen für einen Neustart.
 • Eine kurze Benachrichtigung meldet, wenn alles erledigt ist.
 • Einstellungen werden sofort gespeichert und mit Ihrem Browserkonto synchronisiert.

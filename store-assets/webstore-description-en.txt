@@ -8,7 +8,7 @@ Your browser's own "Clear browsing data" dialog asks the same questions every ti
 
 • One click. No menus, no dialog, no confirmation.
 • You decide what goes. Ten data types, each with its own checkbox.
-• Keep the sites you need. Add sites like github.com to the exclusion list to keep their cookies, site data and history, so you stay logged in. A site covers its subdomains too, so google.com also keeps mail.google.com.
+• Keep the sites you need. Add sites like github.com to the exclusion list to keep their cookies, site data and history, so you stay logged in. A site covers its subdomains too, so google.com also keeps mail.google.com. (In Firefox, only history entries can be kept.)
 • Tabs the way you want. Reload the current tab, all tabs, all but the current one, or close every tab for a clean start.
 • One short notification tells you when it's done.
 • Settings save instantly and sync with your browser account.
