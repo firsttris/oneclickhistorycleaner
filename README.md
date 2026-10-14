@@ -13,6 +13,7 @@ Choose once what should be removed. From then on, one click on the toolbar icon 
 [![Firefox users](https://img.shields.io/amo/users/one-click-history-cleaner?label=users)](https://addons.mozilla.org/firefox/addon/one-click-history-cleaner/)
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-18181b)](LICENSE)
 [![Check Build](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml/badge.svg)](https://github.com/firsttris/oneclickhistorycleaner/actions/workflows/check_build.yml)
+[![Release](https://img.shields.io/github/v/release/firsttris/oneclickhistorycleaner?logo=github&label=release)](https://github.com/firsttris/oneclickhistorycleaner/releases/latest)
 
 <a href="https://chromewebstore.google.com/detail/one-click-history-cleaner/kcjbahochamceejpgjkniopafgdhkplb"><img src="https://img.shields.io/badge/Add_to_Chrome-18181b?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Add to Chrome" /></a>
 <a href="https://addons.mozilla.org/firefox/addon/one-click-history-cleaner/"><img src="https://img.shields.io/badge/Add_to_Firefox-18181b?style=for-the-badge&logo=firefoxbrowser&logoColor=white" alt="Add to Firefox" /></a>
