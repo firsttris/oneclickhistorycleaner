@@ -89,3 +89,17 @@ export const TriangleAlertIcon = (props: IconProps) => (
     <path d="M12 17h.01" />
   </Icon>
 );
+
+export const PlusIcon = (props: IconProps) => (
+  <Icon class={props.class}>
+    <path d="M5 12h14" />
+    <path d="M12 5v14" />
+  </Icon>
+);
+
+export const XIcon = (props: IconProps) => (
+  <Icon class={props.class}>
+    <path d="M18 6 6 18" />
+    <path d="m6 6 12 12" />
+  </Icon>
+);

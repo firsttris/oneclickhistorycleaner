@@ -36,6 +36,7 @@ Your browser's own "Clear browsing data" dialog asks the same questions every ti
 
 - **One click.** No menus, no dialog, no confirmation.
 - **You decide what goes.** Ten data types, from history and cookies to cache and IndexedDB, each with its own checkbox.
+- **Keep the sites you need.** Add sites like `github.com` to the exclusion list to keep their cookies, site data and history, so you stay logged in.
 - **Tabs the way you want.** Reload the current tab, all tabs, all but the current one, or close every tab for a clean start.
 - **Settings follow you.** Changes save instantly and sync with your browser account.
 - **Private by design.** No tracking, no data collection, no access to the websites you visit. All of the code is open source.
@@ -77,7 +78,8 @@ One Click History Cleaner runs entirely on your device. It sends nothing anywher
 |------------|------------------|
 | `browsingData` | Remove the data types you selected |
 | `storage` | Save and sync your settings |
-| `notifications` | Show a short "cleaning" and "done" message |
+| `notifications` | Show a short "done" message |
+| `history` (optional) | Keep the history entries of the sites on your exclusion list. Only asked for when you add the first site |
 
 It does not request access to the websites you visit.
 
@@ -92,7 +94,8 @@ No. Removed data is gone for good, just like with the browser's own dialog. If y
 <details>
 <summary><b>Will I be logged out of websites?</b></summary>
 <br>
-Yes, if <b>Cookies</b> is selected, because that is where websites keep your login. Untick it to stay logged in.
+Yes, if <b>Cookies</b> is selected, because that is where websites keep your login. Untick it to stay logged in everywhere, or add the sites you want to stay logged in to under <b>Keep these sites</b>. A site such as <code>google.com</code> covers its subdomains too, like <code>mail.google.com</code>.<br><br>
+Firefox doesn't let extensions keep cookies or site data for single sites, so there the list only keeps history entries. Downloads and form data are not tied to a site and are always removed.
 </details>
 
 <details>

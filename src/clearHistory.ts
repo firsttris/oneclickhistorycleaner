@@ -40,6 +40,44 @@ export const supportedDataTypes = (Object.keys(defaultOptions) as (keyof chrome.
 const toSupportedDataTypeSet = (options: chrome.browsingData.DataTypeSet) =>
   Object.fromEntries(supportedDataTypes.map((key) => [key, options[key] ?? false])) as chrome.browsingData.DataTypeSet;
 
+/** Data types Chromium can keep for chosen sites (`excludeOrigins`); Firefox has no such option. */
+const ORIGIN_FILTERABLE_DATA_TYPES: (keyof chrome.browsingData.DataTypeSet)[] = [
+  'cache',
+  'cacheStorage',
+  'cookies',
+  'fileSystems',
+  'indexedDB',
+  'localStorage',
+  'serviceWorkers',
+];
+
+export const supportsSiteDataExclusions = import.meta.env.BROWSER !== 'firefox';
+
+/** Optional permission, asked for when the first site is added, to keep history entries of excluded sites. */
+export const HISTORY_PERMISSION: chrome.permissions.Permissions = { permissions: ['history'] };
+
+/**
+ * Turns user input like `https://www.github.com/foo`, `*.google.com` or `GitHub.com` into a domain
+ * (`www.github.com`, `google.com`, `github.com`). Returns `undefined` if it isn't a valid domain.
+ */
+export const normalizeExclusion = (input: string): string | undefined => {
+  const domain = input
+    .trim()
+    .toLowerCase()
+    .replace(/^[a-z][a-z0-9+.-]*:\/\//, '')
+    .replace(/[/?#].*$/, '')
+    .replace(/:\d+$/, '')
+    .replace(/^\*\./, '')
+    .replace(/\.$/, '');
+  return /^(?=.{1,253}$)([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)*[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$/.test(domain)
+    ? domain
+    : undefined;
+};
+
+/** A site matches an excluded domain if it is the domain itself or one of its subdomains. */
+export const isExcludedHost = (host: string, exclusions: string[]) =>
+  exclusions.some((domain) => host === domain || host.endsWith(`.${domain}`));
+
 const NOTIFICATION_ID = 'RRNotification';
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -75,6 +113,75 @@ export const loadRefreshMode = async (): Promise<RefreshMode> => {
   const { tabs } = await chrome.storage.sync.get(['tabs']);
   const refreshMode = (tabs as TabOptions | undefined)?.refreshMode;
   return refreshMode && REFRESH_MODES.includes(refreshMode) ? refreshMode : DEFAULT_REFRESH_MODE;
+};
+
+export const loadExclusions = async (): Promise<string[]> => {
+  const { exclusions } = await chrome.storage.sync.get(['exclusions']);
+  return Array.isArray(exclusions) ? exclusions.filter((domain): domain is string => typeof domain === 'string') : [];
+};
+
+const hostOf = (url?: string) => {
+  try {
+    return url ? new URL(url).hostname : undefined;
+  } catch {
+    return undefined;
+  }
+};
+
+/** Every history entry: an empty search over all time. */
+const getAllHistory = () => chrome.history.search({ text: '', startTime: 0, maxResults: 1_000_000 });
+
+const toOrigins = (hosts: Iterable<string>) => [...hosts].flatMap((host) => [`https://${host}`, `http://${host}`]);
+
+/**
+ * Removes the selected data types but keeps what belongs to the excluded sites (and their subdomains):
+ * - History entries, if the optional history permission was granted, in Chrome and Firefox.
+ * - Cookies, site storage and cache via `excludeOrigins`, in Chromium only.
+ * Downloads and form data are not tied to a site and are removed as usual.
+ */
+const removeBrowsingData = async (dataTypes: chrome.browsingData.DataTypeSet, exclusions: string[]) => {
+  if (exclusions.length === 0) {
+    await chrome.browsingData.remove({ since: 0 }, dataTypes);
+    return;
+  }
+
+  const remaining = { ...dataTypes };
+  const excludedHosts = new Set(exclusions.flatMap((domain) => [domain, `www.${domain}`]));
+
+  const useHistory = remaining.history || supportsSiteDataExclusions;
+  if (useHistory && (await chrome.permissions.contains(HISTORY_PERMISSION))) {
+    const history = await getAllHistory();
+    const toDelete: string[] = [];
+    for (const item of history) {
+      const host = hostOf(item.url);
+      if (host && isExcludedHost(host, exclusions)) {
+        // Subdomains seen in the history, so their site data can be kept as well
+        excludedHosts.add(host);
+      } else if (item.url) {
+        toDelete.push(item.url);
+      }
+    }
+    if (remaining.history) {
+      await Promise.all(toDelete.map((url) => chrome.history.deleteUrl({ url })));
+      remaining.history = false;
+    }
+  }
+
+  if (supportsSiteDataExclusions) {
+    const siteData = Object.fromEntries(
+      ORIGIN_FILTERABLE_DATA_TYPES.filter((key) => remaining[key]).map((key) => [key, true])
+    ) as chrome.browsingData.DataTypeSet;
+    if (Object.keys(siteData).length > 0) {
+      await chrome.browsingData.remove({ since: 0, excludeOrigins: toOrigins(excludedHosts) }, siteData);
+      for (const key of Object.keys(siteData) as (keyof chrome.browsingData.DataTypeSet)[]) {
+        remaining[key] = false;
+      }
+    }
+  }
+
+  if (Object.values(remaining).some(Boolean)) {
+    await chrome.browsingData.remove({ since: 0 }, remaining);
+  }
 };
 
 const getActiveTabId = async () => {
@@ -120,23 +227,38 @@ const handleTabs = async () => {
   }
 };
 
-/** Removes the configured browsing data and applies the tab behavior. Resolves to `true` on success. */
-export const clearHistory = async (): Promise<boolean> => {
+let running: Promise<boolean> | undefined;
+
+/**
+ * Removes the configured browsing data and applies the tab behavior. Resolves to `true` on success.
+ * With `notify`, a single system notification reports the result; the options page shows a toast instead.
+ * A call while a cleaning is still running joins it, so a double click doesn't clean (and notify) twice.
+ */
+export const clearHistory = ({ notify = false }: { notify?: boolean } = {}): Promise<boolean> => {
+  running ??= runClearHistory(notify).finally(() => {
+    running = undefined;
+  });
+  return running;
+};
+
+const runClearHistory = async (notify: boolean): Promise<boolean> => {
   try {
-    await showNotification(t('notification_cleaning'));
-    await chrome.browsingData.remove({ since: 0 }, toSupportedDataTypeSet(await loadOptions()));
+    await removeBrowsingData(toSupportedDataTypeSet(await loadOptions()), await loadExclusions());
     await handleTabs();
-    await delay(1000);
-    await showNotification(t('notification_cleaningDone'));
-    await delay(1500);
-    await clearNotification();
+    if (notify) {
+      await showNotification(t('notification_cleaningDone'));
+      await delay(2500);
+      await clearNotification();
+    }
     return true;
   } catch (error) {
     console.error('Failed to clear history:', error);
-    try {
-      await showNotification(t('notification_cleaningFailed'));
-    } catch (notificationError) {
-      console.error('Failed to show error notification:', notificationError);
+    if (notify) {
+      try {
+        await showNotification(t('notification_cleaningFailed'));
+      } catch (notificationError) {
+        console.error('Failed to show error notification:', notificationError);
+      }
     }
     return false;
   }
