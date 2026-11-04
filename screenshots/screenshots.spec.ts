@@ -8,7 +8,7 @@ import { chromeStub } from './chrome-stub';
  * (chrome-stub.ts).
  */
 
-// npm run screenshots runs in the project directory
+// bun run screenshots runs in the project directory
 const SCREENSHOTS = join(process.cwd(), 'store-assets', 'screenshots');
 
 for (const colorScheme of ['light', 'dark'] as const) {

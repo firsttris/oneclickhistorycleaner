@@ -118,23 +118,23 @@ The extension is built with [SolidJS](https://www.solidjs.com), [TypeScript](htt
 
 ### Development
 
-You need Node.js 22.12 or newer (see `.nvmrc`) and npm.
+You need [Bun](https://bun.sh) (the version in `packageManager` in `package.json`).
 
 ```bash
 git clone https://github.com/firsttris/oneclickhistorycleaner.git
 cd oneclickhistorycleaner
-npm install
+bun install
 
-npm run start          # Development build for Chrome with hot reload
-npm run build          # Production build for Chrome and Edge
-npm run build:firefox  # Production build for Firefox
-npm run lint           # Biome
-npm run typecheck      # TypeScript
+bun run start          # Development build for Chrome with hot reload
+bun run build          # Production build for Chrome and Edge
+bun run build:firefox  # Production build for Firefox
+bun run lint           # Biome
+bun run typecheck      # TypeScript
 ```
 
 **Load the extension in Chrome or Edge:** open `chrome://extensions` (or `edge://extensions`), turn on **Developer mode**, click **Load unpacked** and select the `dist` folder.
 
-**Load the extension in Firefox:** run `npm run build:firefox`, open `about:debugging`, click **This Firefox**, then **Load Temporary Add-on…** and select `dist/manifest.json`.
+**Load the extension in Firefox:** run `bun run build:firefox`, open `about:debugging`, click **This Firefox**, then **Load Temporary Add-on…** and select `dist/manifest.json`.
 
 ### Publishing
 
@@ -144,7 +144,7 @@ npm run typecheck      # TypeScript
 
 A release is a tag `vX.Y.Z`, as in the other projects ([firsttris/workflows](https://github.com/firsttris/workflows)):
 
-- **Actions → Bump version → Run workflow** (patch, minor or major) raises the version in `package.json`, commits it as `Release vX.Y.Z`, tags it and starts the release. On a checkout, `npm run release:patch` (or `:minor`, `:major`) does the same.
+- **Actions → Bump version → Run workflow** (patch, minor or major) raises the version in `package.json`, commits it as `Release vX.Y.Z`, tags it and starts the release. On a checkout, `bun run release:patch` (or `:minor`, `:major`) does the same.
 - The tag starts **Release**: lint, typecheck and tests, the Chrome and Firefox builds, then a GitHub release with generated notes and both packages, then the store uploads in parallel.
 - To submit an existing version again, e.g. to one store only, run **Release** by hand on its tag and untick the other stores.
 
@@ -155,7 +155,7 @@ gh workflow run release.yml --ref v0.1.25 -f edge=false  # existing release, aga
 
 The store listing material (banners, description texts in English and German, icon, screenshots) lives in `store-assets/`, outside `public/`, so it is not packaged into the extension.
 
-The two screenshots of the settings page (`store-assets/screenshots/`, light and dark) come from `npm run screenshots`: the built page runs as a plain page in Chromium with a stand-in for the extension API (`screenshots/chrome-stub.ts`). After a change to the look, run **Actions → Update screenshots → Run workflow**: it takes them in the official Playwright image and commits the ones that changed.
+The two screenshots of the settings page (`store-assets/screenshots/`, light and dark) come from `bun run screenshots`: the built page runs as a plain page in Chromium with a stand-in for the extension API (`screenshots/chrome-stub.ts`). After a change to the look, run **Actions → Update screenshots → Run workflow**: it takes them in the official Playwright image and commits the ones that changed.
 
 The Chrome package is uploaded as a draft (`publish: false`) and has to be submitted for review in the developer dashboard. Firefox receives the source archive of the tagged commit for the review.
 

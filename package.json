@@ -1,22 +1,24 @@
 {
   "name": "oneclickhistorycleaner",
   "version": "0.1.28",
+  "type": "module",
   "description": "One Click History Cleaner with hot reload",
+  "packageManager": "bun@1.4.4",
   "scripts": {
-    "build": "vite build",
-    "build:firefox": "BROWSER=firefox vite build",
-    "build:watch": "vite build --watch",
-    "start": "vite",
-    "preview": "vite preview",
+    "build": "bun --bun vite build",
+    "build:firefox": "BROWSER=firefox bun --bun vite build",
+    "build:watch": "bun --bun vite build --watch",
+    "start": "bun --bun vite",
+    "preview": "bun --bun vite preview",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
     "typecheck": "tsc --noEmit",
-    "release:patch": "npm version patch",
-    "release:minor": "npm version minor",
-    "release:major": "npm version major",
+    "release:patch": "bun pm version patch",
+    "release:minor": "bun pm version minor",
+    "release:major": "bun pm version major",
     "postversion": "git push --follow-tags",
-    "screenshots": "playwright test -c playwright.screenshots.config.ts"
+    "screenshots": "bun --bun playwright test -c playwright.screenshots.config.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.15",
