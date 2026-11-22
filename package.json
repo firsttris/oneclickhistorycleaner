@@ -3,7 +3,7 @@
   "version": "0.1.28",
   "type": "module",
   "description": "One Click History Cleaner with hot reload",
-  "packageManager": "bun@1.4.4",
+  "packageManager": "bun@1.4.5",
   "scripts": {
     "build": "bun --bun vite build",
     "build:firefox": "BROWSER=firefox bun --bun vite build",
